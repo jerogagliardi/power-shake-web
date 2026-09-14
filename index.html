@@ -5,6 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Power Shake – Suplementación Automática para Gimnasios</title>
   <meta name="description" content="Power Shake PS86: la máquina de suplementación inteligente para gimnasios premium. Tres modelos de negocio: revenue share, alquiler o compra." />
+
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://powershake-ar.netlify.app/" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://powershake-ar.netlify.app/" />
+  <meta property="og:title" content="Power Shake – Suplementación Automática para Gimnasios" />
+  <meta property="og:description" content="Power Shake PS86: la máquina de suplementación inteligente para gimnasios premium. Tres modelos de negocio: revenue share, alquiler o compra." />
+  <meta property="og:image" content="https://powershake-ar.netlify.app/images/ps86-hero.png" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Power Shake" />
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Power Shake – Suplementación Automática para Gimnasios" />
+  <meta name="twitter:description" content="Power Shake PS86: la máquina de suplementación inteligente para gimnasios premium. Tres modelos de negocio: revenue share, alquiler o compra." />
+  <meta name="twitter:image" content="https://powershake-ar.netlify.app/images/ps86-hero.png" />
+
+  <!-- SEO: JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Power Shake",
+    "description": "Máquinas vending de suplementación proteica para gimnasios, clubes y universidades en Argentina.",
+    "url": "https://powershake-ar.netlify.app/",
+    "telephone": "+549115138-1311",
+    "email": "jeronimo.gagliardi@powershake.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AR"
+    },
+    "areaServed": "Argentina",
+    "priceRange": "$$",
+    "sameAs": [],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Modelos de máquinas Power Shake",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Power Shake PS86",
+            "description": "Máquina vending de suplementación proteica, modelo PS86, para gimnasios premium."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Power Shake PS22",
+            "description": "Máquina vending compacta PS22 para gimnasios boutique."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Power Shake PS78",
+            "description": "Máquina vending PS78 para lobbies y espacios de alto tráfico."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -415,7 +484,7 @@
     #productos .product-card__name { color: #0d0f0d; }
 
     #maquina { position: relative; overflow: hidden; background: var(--black-card); }
-    #maquina::before { content: ''; position: absolute; inset: 0; background: url('images/machine2.jpg') center 20% / cover no-repeat; filter: brightness(0.20) saturate(0.6); z-index: 0; }
+    #maquina::before { content: ''; position: absolute; inset: 0; background: url('images/ps86-bg.png') center / cover no-repeat; filter: brightness(0.55); z-index: 0; }
     #maquina::after { display: none; }
     #maquina .container { position: relative; z-index: 2; }
 
@@ -678,9 +747,12 @@
 
       <ul class="nav__links">
         <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#maquina">Máquina</a></li>
+        <li><a href="#maquina">PS86</a></li>
+        <li><a href="#ps22">PS22</a></li>
+        <li><a href="#ps78">PS78</a></li>
         <li><a href="#modelos">Modelos</a></li>
         <li><a href="#tecnologia">Tecnología</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
 
@@ -752,7 +824,7 @@
           <div style="position:relative;z-index:1;">
             <div class="hero__model-badge">PS86</div>
             <div style="border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(124,181,24,0.2);background:#111;">
-              <img src="images/gym-foto1.jpg" alt="Power Shake PS86 – Máquina de suplementación automática" style="width:100%;height:auto;display:block;" />
+              <img src="images/gym-foto1.jpg?v=2" alt="Power Shake PS86 – Máquina de suplementación automática" style="width:100%;height:auto;display:block;" />
             </div>
           </div>
         </div>
@@ -879,32 +951,102 @@
   </section>
 
   <!-- MACHINE MODEL PS86 -->
-  <section class="section" id="maquina">
+  <section class="section" id="maquina" style="padding:28px 0;">
     <div class="container">
-      <div class="machine__inner">
+      <div class="machine__inner" style="gap:28px;">
         <div class="reveal">
-          <img src="images/ps86-detail.jpg" alt="Power Shake PS86 – Vista detalle" style="width:100%;border-radius:16px;display:block;box-shadow:0 0 50px rgba(124,181,24,0.1);object-fit:cover;" />
+          <img src="images/ps86-detail.png" alt="Power Shake PS86 – Vista detalle" style="width:100%;display:block;object-fit:contain;max-height:500px;" />
         </div>
         <div class="reveal reveal-delay-2">
           <span class="tag">El modelo</span>
-          <h2 class="section-title">Power Shake<br><span>PS86</span></h2>
-          <p class="section-sub">Instalás una vez, la máquina trabaja sola. Tus socios tienen sus suplementos, vos tenés un ingreso extra.</p>
-          <div class="machine__specs">
-            <div class="spec-item"><div class="spec-item__label">Modelo</div><div class="spec-item__val">PS86</div></div>
-            <div class="spec-item"><div class="spec-item__label">Pantalla</div><div class="spec-item__val">Touch HD</div></div>
-            <div class="spec-item"><div class="spec-item__label">Productos</div><div class="spec-item__val">Hasta 7 opciones</div></div>
-            <div class="spec-item"><div class="spec-item__label">Pago</div><div class="spec-item__val">QR / Digital</div></div>
-            <div class="spec-item"><div class="spec-item__label">Operación</div><div class="spec-item__val">24/7</div></div>
-            <div class="spec-item"><div class="spec-item__label">Control</div><div class="spec-item__val">Remoto</div></div>
+          <h2 class="section-title" style="font-size:clamp(16px,1.8vw,24px);">Power Shake<br><span>PS86</span></h2>
+          <p class="section-sub" style="font-size:13px;margin-top:8px;">Instalás una vez, la máquina trabaja sola. Tus socios tienen sus suplementos, vos tenés un ingreso extra.</p>
+          <div class="machine__specs" style="margin-top:14px;gap:8px;">
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Modelo</div><div class="spec-item__val" style="font-size:13px;">PS86</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pantalla</div><div class="spec-item__val" style="font-size:13px;">Touch HD</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Productos</div><div class="spec-item__val" style="font-size:13px;">Hasta 7 opciones</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pago</div><div class="spec-item__val" style="font-size:13px;">QR / Digital</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Operación</div><div class="spec-item__val" style="font-size:13px;">24/7</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Control</div><div class="spec-item__val" style="font-size:13px;">Remoto</div></div>
           </div>
-          <ul class="machine__feature-list">
-            <li>Dispensado automático en segundos</li>
-            <li>Pantalla publicitaria integrada</li>
-            <li>Dashboard de ventas en tiempo real</li>
-            <li>Control remoto de stock e inventario</li>
-            <li>Diseño compacto, no ocupa espacio</li>
-            <li>Instalación y setup incluido</li>
+          <ul class="machine__feature-list" style="margin-top:12px;gap:8px;">
+            <li style="font-size:13px;">Dispensado automático en segundos</li>
+            <li style="font-size:13px;">Pantalla publicitaria integrada</li>
+            <li style="font-size:13px;">Dashboard de ventas en tiempo real</li>
+            <li style="font-size:13px;">Control remoto de stock e inventario</li>
+            <li style="font-size:13px;">Diseño compacto, no ocupa espacio</li>
+            <li style="font-size:13px;">Instalación y setup incluido</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MACHINE MODEL PS22 -->
+  <section class="section" id="ps22" style="background:url('images/gym-bg-ps22.avif') center/cover no-repeat; padding: 32px 0; position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(10,14,10,0.78);z-index:0;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="machine__inner" style="direction:rtl; gap:28px;">
+        <div class="reveal" style="direction:ltr;">
+          <img src="images/ps22-machine.png" alt="Power Shake PS22 – Modelo compacto" style="width:100%;display:block;object-fit:contain;max-height:400px;" />
+        </div>
+        <div class="reveal reveal-delay-2" style="direction:ltr;">
+          <span class="tag">Modelo compacto</span>
+          <h2 class="section-title" style="font-size:clamp(16px,1.8vw,24px);">Power Shake<br><span>PS22</span></h2>
+          <p class="section-sub" style="font-size:13px;margin-top:8px;">Batidos al instante, frío o caliente. La PS22 mezcla automáticamente y entrega en segundos. Ideal para espacios reducidos: vestuarios, pasillos y lobbies.</p>
+          <div class="machine__specs" style="margin-top:14px;gap:8px;">
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pantalla</div><div class="spec-item__val" style="font-size:13px;">18.5" táctil</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Temperatura</div><div class="spec-item__val" style="font-size:13px;">0° – 95°C</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Contenedores</div><div class="spec-item__val" style="font-size:13px;">4 x 4 litros</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pago</div><div class="spec-item__val" style="font-size:13px;">Mercado Pago / QR</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Dimensiones</div><div class="spec-item__val" style="font-size:13px;">70 × 58 × 52 cm</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Peso</div><div class="spec-item__val" style="font-size:13px;">≤ 43 kg</div></div>
+          </div>
+          <ul class="machine__feature-list" style="margin-top:12px;gap:8px;">
+            <li style="font-size:13px;">Mezcla automática al instante</li>
+            <li style="font-size:13px;">Bebidas frías y calientes en el mismo equipo</li>
+            <li style="font-size:13px;">Pantalla táctil con catálogo de productos</li>
+            <li style="font-size:13px;">Pago con Mercado Pago QR</li>
+            <li style="font-size:13px;">Dashboard de ventas en tiempo real</li>
+            <li style="font-size:13px;">Instalación y setup incluido</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MACHINE MODEL PS78 -->
+  <section class="section" id="ps78" style="background:url('images/lobby-bg-ps78.png') center/cover no-repeat; padding: 32px 0; position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(10,14,10,0.75);z-index:0;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="machine__inner" style="gap:28px;">
+        <div class="reveal">
+          <span class="tag">Modelo grande</span>
+          <h2 class="section-title" style="font-size:clamp(16px,1.8vw,24px);">Power Shake<br><span>PS78</span></h2>
+          <p class="section-sub" style="font-size:13px;margin-top:8px;">Bebidas, snacks y suplementos las 24 horas. La PS78 tiene mayor capacidad y refrigeración integrada, pensada para gimnasios de alto tráfico.</p>
+          <div class="machine__specs" style="margin-top:14px;gap:8px;">
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pantalla</div><div class="spec-item__val" style="font-size:13px;">21.5" táctil</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Refrigeración</div><div class="spec-item__val" style="font-size:13px;">4°C – 25°C</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Conectividad</div><div class="spec-item__val" style="font-size:13px;">Wi-Fi + 4G</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pago</div><div class="spec-item__val" style="font-size:13px;">Mercado Pago / QR</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Gestión</div><div class="spec-item__val" style="font-size:13px;">Remota en tiempo real</div></div>
+            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Operación</div><div class="spec-item__val" style="font-size:13px;">24/7</div></div>
+          </div>
+          <ul class="machine__feature-list" style="margin-top:12px;gap:8px;">
+            <li style="font-size:13px;">Mayor capacidad de stock en múltiples filas</li>
+            <li style="font-size:13px;">Pantalla de 21.5" de alto impacto visual</li>
+            <li style="font-size:13px;">Refrigeración integrada para bebidas frías</li>
+            <li style="font-size:13px;">Control remoto de stock vía Wi-Fi + 4G</li>
+            <li style="font-size:13px;">Pago con Mercado Pago QR</li>
+            <li style="font-size:13px;">Instalación y setup incluido</li>
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="images/ps78-machine.png" alt="Power Shake PS78 – Modelo grande" style="width:100%;display:block;object-fit:contain;max-height:620px;" />
         </div>
       </div>
     </div>
@@ -1340,6 +1482,155 @@
     </div>
   </section>
 
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="background:var(--black-card);border-top:1px solid var(--black-border);">
+    <div class="container" style="max-width:760px;">
+      <div class="reveal" style="text-align:center;margin-bottom:36px;">
+        <span class="tag">FAQ</span>
+        <h2 class="section-title" style="text-align:center;">Lo que nos preguntan<br><span>siempre.</span></h2>
+      </div>
+
+      <div class="reveal" id="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Qué incluye la instalación?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            La máquina configurada para tu gimnasio, el setup completo, capacitación para operar, acceso al dashboard de ventas y soporte continuo. Las condiciones comerciales se arman según el modelo que elijas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Necesito experiencia previa?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            No. Te acompañamos desde el primer día: te ayudamos a elegir la ubicación ideal dentro del gym, la instalamos y te mostramos cómo gestionar todo desde el panel.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Qué necesito tener en el gimnasio?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Un enchufe de 220V, conexión a internet por wifi y un espacio firme donde apoyarla. Nada más. Las medidas exactas están en la ficha de cada modelo.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Cómo cobran mis socios y cuándo se acredita la plata?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Tus socios pagan escaneando el QR con Mercado Pago o billetera digital. La plata se acredita automáticamente. Sin efectivo, sin cierres de caja, sin nadie que tenga que ir a retirar nada.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Puedo cambiar precios y productos sin ir hasta la máquina?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Sí. Desde el dashboard cambiás precios, habilitás o deshabilitás productos y configurás lo que quieras. El cambio impacta en la máquina al instante, desde cualquier dispositivo.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Qué pasa si necesita un repuesto o mantenimiento?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Tenemos stock de repuestos disponible: espirales, motores y todo lo necesario. Ante cualquier falla, el soporte remoto resuelve la mayoría de los casos sin necesidad de visita técnica.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Puedo elegir qué suplementos ofrece la máquina?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Sí. El mix de productos se define con vos según el perfil de tus socios. Arrancamos con un catálogo de alta rotación como base y lo ajustamos a lo que mejor funcione para tu gimnasio.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Cuál es el modelo de negocio que más conviene?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Depende de tu situación. Revenue Share es ideal si querés cero riesgo y cero inversión. Alquiler conviene si querés quedarte con el 100% de las ventas pagando una cuota fija. Compra es la mejor opción si querés ser dueño del activo a largo plazo. Hablemos y te ayudamos a elegir.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Qué productos son compatibles con el modelo PS78?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            El mix de productos lo definimos juntos luego de abonar la seña. A partir de ahí configuramos la máquina a medida según tu negocio: tipo de producto, formato, precio y presentación. No hay un catálogo cerrado — lo armamos para vos.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Puedo cambiar o rotar los productos que vendo en la PS78?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Sí. Nosotros cambiamos los espirales de la máquina y los modificamos para que sean compatibles con los nuevos productos. Si querés rotar el catálogo, nos avisás y coordinamos el cambio sin interrumpir la operación.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item { border-bottom: 1px solid var(--black-border); }
+    .faq-q {
+      width: 100%; background: none; border: none; color: var(--white);
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      text-align: left; padding: 18px 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; transition: color 0.2s ease;
+    }
+    .faq-q:hover { color: var(--green); }
+    .faq-icon { font-size: 20px; color: var(--green); flex-shrink: 0; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); line-height: 1; }
+    .faq-q.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 14px; color: var(--gray); line-height: 1.7;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s ease;
+      padding: 0;
+    }
+    .faq-a.open { max-height: 300px; padding-bottom: 18px; }
+  </style>
+
+  <script>
+    function toggleFaq(btn) {
+      var isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(function(b) {
+        b.classList.remove('open');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.nextElementSibling.classList.add('open');
+      }
+    }
+  </script>
 
   <!-- CTA FINAL -->
   <section class="section cta-section" id="contacto">

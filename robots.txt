@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://powershake-ar.netlify.app/sitemap.xml
