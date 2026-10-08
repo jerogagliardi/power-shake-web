@@ -1,735 +1,334 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Power Shake – Suplementación Automática para Gimnasios</title>
-  <meta name="description" content="Power Shake PS86: la máquina de suplementación inteligente para gimnasios premium. Tres modelos de negocio: revenue share, alquiler o compra." />
+  <title>Power Shake – Máquinas expendedoras inteligentes para tu negocio</title>
+  <meta name="description" content="Power Shake: máquinas expendedoras inteligentes de suplementos y batidos deportivos. Comprá o alquilá tu máquina y empezá a operar tu propio negocio automatizado." />
 
-  <!-- SEO: Canonical -->
-  <link rel="canonical" href="https://powershake-ar.netlify.app/" />
+  <link rel="canonical" href="https://powervending-ar.netlify.app/" />
 
-  <!-- SEO: Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://powershake-ar.netlify.app/" />
-  <meta property="og:title" content="Power Shake – Suplementación Automática para Gimnasios" />
-  <meta property="og:description" content="Power Shake PS86: la máquina de suplementación inteligente para gimnasios premium. Tres modelos de negocio: revenue share, alquiler o compra." />
-  <meta property="og:image" content="https://powershake-ar.netlify.app/images/ps86-hero.png" />
+  <meta property="og:url" content="https://powervending-ar.netlify.app/" />
+  <meta property="og:title" content="Power Shake – Máquinas expendedoras inteligentes" />
+  <meta property="og:description" content="Comprá o alquilá una máquina expendedora inteligente y generá ingresos automáticos en tu espacio." />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Power Shake" />
 
-  <!-- SEO: Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Power Shake – Suplementación Automática para Gimnasios" />
-  <meta name="twitter:description" content="Power Shake PS86: la máquina de suplementación inteligente para gimnasios premium. Tres modelos de negocio: revenue share, alquiler o compra." />
-  <meta name="twitter:image" content="https://powershake-ar.netlify.app/images/ps86-hero.png" />
-
-  <!-- SEO: JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Power Shake",
-    "description": "Máquinas vending de suplementación proteica para gimnasios, clubes y universidades en Argentina.",
-    "url": "https://powershake-ar.netlify.app/",
+    "description": "Máquinas expendedoras inteligentes de suplementos y batidos deportivos para gimnasios, centros deportivos y espacios fitness en Argentina.",
+    "url": "https://powervending-ar.netlify.app/",
     "telephone": "+549115138-1311",
-    "email": "jeronimo.gagliardi@powershake.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "AR"
-    },
-    "areaServed": "Argentina",
-    "priceRange": "$$",
-    "sameAs": [],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Modelos de máquinas Power Shake",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Power Shake PS86",
-            "description": "Máquina vending de suplementación proteica, modelo PS86, para gimnasios premium."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Power Shake PS22",
-            "description": "Máquina vending compacta PS22 para gimnasios boutique."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Power Shake PS78",
-            "description": "Máquina vending PS78 para lobbies y espacios de alto tráfico."
-          }
-        }
-      ]
-    }
+    "address": { "@type": "PostalAddress", "addressCountry": "AR" },
+    "areaServed": "Argentina"
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:ital,wght@1,800&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     :root {
-      --green:       #7cb518;
-      --green-dim:   #6a9c14;
-      --green-glow:  rgba(124,181,24,0.15);
-      --black:       #0d0f0d;
-      --black-card:  #141814;
-      --black-border:#222922;
-      --white:       #ffffff;
-      --gray:        #9ca3af;
-      --gray-light:  #d1d5db;
-      --font-head:   'Open Sans', sans-serif;
-      --font-body:   'Open Sans', sans-serif;
-      --radius:      8px;
-      --radius-lg:   12px;
-      --transition:  0.3s cubic-bezier(.4,0,.2,1);
+      --green:        #7cb518;
+      --green-dim:    #6a9c14;
+      --green-glow:   rgba(124,181,24,0.15);
+      --black:        #0d0f0d;
+      --black-card:   #141814;
+      --black-border: #222922;
+      --white:        #ffffff;
+      --gray:         #9ca3af;
+      --gray-light:   #d1d5db;
+      --font-head:    'Open Sans', sans-serif;
+      --font-body:    'Open Sans', sans-serif;
+      --radius:       8px;
+      --radius-lg:    12px;
+      --transition:   0.3s cubic-bezier(.4,0,.2,1);
     }
 
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    body { background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 13px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      opacity: 0.028;
-      pointer-events: none;
-      z-index: 9998;
-    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 48px 0; }
+    .section--sm{ padding: 28px 0; }
 
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    .section    { padding: 12px 0; }
-    .section--sm{ padding: 8px 0; }
+    .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); background: var(--green-glow); border: 1px solid rgba(124,181,24,0.3); border-radius: 20px; padding: 4px 12px; margin-bottom: 14px; }
 
-    .tag {
-      display: inline-block;
-      background: var(--green-glow);
-      color: var(--green);
-      border: 1px solid var(--green);
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(18px, 2.2vw, 28px);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.3px;
-    }
+    .section-title { font-family: var(--font-head); font-size: clamp(18px,2.2vw,30px); font-weight: 900; text-transform: uppercase; line-height: 1.05; }
     .section-title span { color: var(--green); }
+    .section-sub   { font-size: 14px; color: var(--gray); line-height: 1.7; margin-top: 10px; }
 
-    .section-sub {
-      color: var(--gray);
-      font-size: 14px;
-      max-width: 560px;
-      margin-top: 8px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: var(--transition);
-      letter-spacing: 0.3px;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius); font-family: var(--font-head); font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: var(--transition); }
     .btn-primary { background: var(--green); color: var(--black); }
-    .btn-primary:hover { background: #8fd11e; transform: translateY(-2px); box-shadow: 0 0 30px rgba(124,181,24,0.4); }
-    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--white); }
+    .btn-primary:hover { background: #8fd11e; transform: translateY(-2px); }
+    .btn-outline  { background: transparent; color: var(--white); border: 1px solid var(--black-border); }
     .btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
-    .btn-wa { background: #25D366; color: var(--white); }
-    .btn-wa:hover { background: #1ebe5b; transform: translateY(-2px); box-shadow: 0 0 24px rgba(37,211,102,0.4); }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1fb355; transform: translateY(-2px); }
 
     /* NAV */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 0 24px;
-      transition: var(--transition);
-    }
-    .nav.scrolled {
-      background: rgba(8,8,8,0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--black-border);
-    }
-    .nav__inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav__logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav__logo-mark { display: none; }
-    .nav__logo-mark img { display: none; }
-    .nav__logo-text {
-      font-family: var(--font-head);
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--white);
-      text-transform: uppercase;
-    }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: var(--transition); }
+    .nav--scrolled { background: rgba(13,15,13,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--black-border); }
+    .nav__inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav__logo  { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav__logo-mark { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; }
+    .nav__logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+    .nav__logo-text { font-family: 'Barlow Condensed', var(--font-head); font-size: 22px; font-weight: 800; font-style: italic; letter-spacing: 2px; text-transform: uppercase; color: var(--white); }
     .nav__logo-text span { color: var(--green); }
+    .nav__links { display: flex; list-style: none; gap: 28px; }
+    .nav__links a { font-size: 13px; font-weight: 600; color: var(--gray); text-decoration: none; transition: var(--transition); }
+    .nav__links a:hover, .nav__links a.nav-active { color: var(--white); }
+    .nav__links a { position: relative; }
+    .nav__links a::after { content: ''; position: absolute; bottom: -3px; left: 50%; width: 0; height: 1.5px; background: var(--green); transform: translateX(-50%); transition: width 0.3s cubic-bezier(0.16,1,0.3,1); }
+    .nav__links a:hover::after { width: 100%; }
+    .nav__cta { display: flex; align-items: center; gap: 10px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
 
-    .nav__links { display: flex; align-items: center; gap: 14px; list-style: none; }
-    .nav__links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 500; transition: var(--transition); }
-    .nav__links a:hover { color: var(--white); }
-    .nav__cta { display: flex; gap: 12px; }
-
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
-
-    .mobile-menu {
-      display: flex;
-      position: fixed;
-      top: 72px; left: 0; right: 0;
-      background: rgba(8,8,8,0.98);
-      backdrop-filter: blur(24px);
-      padding: 16px;
-      border-bottom: 1px solid var(--black-border);
-      z-index: 999;
-      flex-direction: column;
-      gap: 14px;
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-8px);
-      transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.16,1,0.3,1), visibility 0s linear 0.28s;
-    }
-    .mobile-menu.open {
-      visibility: visible;
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-      transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.16,1,0.3,1), visibility 0s linear 0s;
-    }
-    .mobile-menu a { color: var(--gray); text-decoration: none; font-size: 16px; font-weight: 500; padding: 10px 0; border-bottom: 1px solid var(--black-border); }
+    /* MOBILE MENU */
+    .mobile-menu { display: none; flex-direction: column; gap: 0; background: var(--black-card); border-bottom: 1px solid var(--black-border); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 14px 24px; font-size: 15px; font-weight: 600; color: var(--gray-light); text-decoration: none; border-bottom: 1px solid var(--black-border); transition: var(--transition); }
+    .mobile-menu a:hover { color: var(--green); background: var(--green-glow); }
 
     /* HERO */
-    .hero {
-      min-height: 68vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 40px 0 24px;
-      background: url('images/gym-interior.jpg') center center / cover no-repeat;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(105deg, rgba(13,15,13,0.82) 0%, rgba(13,15,13,0.60) 55%, rgba(13,15,13,0.35) 100%),
-        linear-gradient(to bottom, rgba(13,15,13,0.2) 0%, transparent 40%, rgba(13,15,13,0.5) 100%);
-      z-index: 0;
-    }
-    .hero__grid-bg { display: none; }
-    .hero__glow { display: none; }
-    .hero__inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-glow);
-      border: 1px solid rgba(124,181,24,0.3);
-      border-radius: 999px;
-      padding: 6px 16px 6px 8px;
-      margin-bottom: 14px;
-    }
-    .hero__badge-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-    .hero__badge span { font-size: 12px; font-weight: 600; color: var(--green); letter-spacing: 1px; text-transform: uppercase; }
-    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
-
-    .hero__title { font-family: var(--font-head); font-size: clamp(28px, 3.8vw, 48px); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 12px; }
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 80px 0 40px; background: url('images/hero-machine-real.jpg') right center/auto 95% no-repeat; }
+    .hero__grid-bg { position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,15,13,0.92) 0%, rgba(13,15,13,0.75) 35%, rgba(13,15,13,0.35) 65%, rgba(13,15,13,0.10) 100%); z-index: 0; }
+    .hero__grid-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero__glow    { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(ellipse, rgba(124,181,24,0.18) 0%, transparent 65%); z-index: 0; pointer-events: none; }
+    .hero__inner   { position: relative; z-index: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+    .hero__badge   { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); background: var(--green-glow); border: 1px solid rgba(124,181,24,0.3); border-radius: 20px; padding: 5px 14px; margin-bottom: 20px; }
+    .hero__badge-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.4;} }
+    .hero__title   { font-family: var(--font-head); font-size: clamp(26px,3.5vw,52px); font-weight: 900; text-transform: uppercase; line-height: 1.0; margin-bottom: 16px; }
     .hero__title .line-green { color: var(--green); }
-    .hero__sub { font-size: 15px; color: var(--gray); line-height: 1.6; max-width: 480px; margin-bottom: 12px; }
-    .hero__sub strong { color: var(--white); }
-    .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero__stats { display: flex; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--black-border); flex-wrap: wrap; }
-    .hero__stat-num { font-family: var(--font-head); font-size: 28px; font-weight: 900; color: var(--green); line-height: 1; }
-    .hero__stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
-
-    .hero__visual { position: relative; display: flex; justify-content: center; align-items: center; }
-    .hero__machine-wrap { position: relative; width: 100%; max-width: 520px; }
-    .hero__machine-glow { display: none; }
-    .hero__chip { display: none; }
-
-    .hero__model-badge {
-      position: absolute;
-      top: -16px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--green);
-      color: var(--black);
-      font-family: var(--font-head);
-      font-size: 14px; font-weight: 900;
-      letter-spacing: 2px;
-      padding: 6px 20px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      z-index: 3;
-    }
+    .hero__title-line { display: block; }
+    .hero__sub     { font-size: 15px; color: var(--gray); line-height: 1.7; max-width: 480px; margin-bottom: 28px; }
+    .hero__ctas    { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+    .hero__stats   { display: flex; gap: 28px; flex-wrap: wrap; }
+    .hero__stat-num   { font-family: var(--font-head); font-size: 26px; font-weight: 900; color: var(--white); line-height: 1; }
+    .hero__stat-label { font-size: 11px; color: var(--gray); margin-top: 2px; letter-spacing: 0.5px; }
+    .hero__visual  { display: flex; align-items: flex-end; justify-content: center; gap: 12px; }
+    .hero__machine { flex: 1; text-align: center; }
+    .hero__machine img { width: auto; height: 220px; max-width: 170px; filter: drop-shadow(0 10px 32px rgba(124,181,24,0.32)); }
+    .hero__model-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); background: rgba(124,181,24,0.1); border: 1px solid rgba(124,181,24,0.25); border-radius: 12px; padding: 3px 10px; display: inline-block; margin-bottom: 8px; }
 
     /* SOCIAL PROOF */
-    .social-proof { padding: 28px 0; border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); }
-    .social-proof__inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
-    .social-proof__label { font-size: 11px; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
-    .social-proof__logo--star {
-      font-family: var(--font-head);
-      font-size: 20px; font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(124,181,24,0.8);
-    }
-    .social-proof__stat {
-      font-size: 13px;
-      color: rgba(255,255,255,0.35);
-      font-weight: 500;
-    }
-    .social-proof__dot { width: 4px; height: 4px; background: var(--black-border); border-radius: 50%; }
+    .social-proof { background: var(--black-card); border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); padding: 14px 0; }
+    .social-proof__inner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .social-proof__label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+    .social-proof__logo--star { font-size: 13px; font-weight: 800; color: var(--white); }
+    .social-proof__dot  { width: 4px; height: 4px; background: var(--black-border); border-radius: 50%; }
+    .social-proof__stat { font-size: 12px; color: var(--gray); }
 
-    /* SVG ICONS */
-    .ico { display: block; width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    /* 4 MACHINE CARDS */
+    .models__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+    .model-card   { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
+    .model-card:hover { border-color: rgba(124,181,24,0.4); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .model-card__img  { background: linear-gradient(160deg, #1a1f1a 0%, #111 100%); display: flex; align-items: flex-end; justify-content: center; padding: 28px 16px 0; min-height: 260px; position: relative; }
+    .model-card__img::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, var(--black-card)); }
+    .model-card__img img { width: 100%; max-width: 190px; height: 240px; object-fit: contain; object-position: bottom; filter: drop-shadow(0 4px 20px rgba(124,181,24,0.25)); position: relative; z-index: 1; }
+    .model-card__body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+    .model-card__line { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+    .model-card__name { font-size: 20px; font-weight: 900; margin-bottom: 6px; }
+    .model-card__desc { font-size: 12px; color: var(--gray); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+    .model-card__specs{ display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .model-card__spec { display: flex; justify-content: space-between; align-items: center; font-size: 11px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .model-card__spec-label { color: var(--gray); }
+    .model-card__spec-val   { font-weight: 700; color: var(--white); }
+    .model-card__price { font-family: var(--font-head); font-size: 15px; font-weight: 900; color: var(--green); margin-bottom: 12px; }
+    .model-card__cta  { margin-top: auto; }
 
-    /* BENEFITS */
-    .benefits__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 28px; }
-    .benefit-card { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 14px; transition: var(--transition); position: relative; overflow: hidden; }
-    .benefit-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); opacity: 0; transition: var(--transition); }
-    .benefit-card:hover { border-color: rgba(124,181,24,0.3); transform: translateY(-4px); }
-    .benefit-card:hover::before { opacity: 1; }
-    .benefit-card__icon { width: 38px; height: 38px; background: var(--green-glow); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
-    .benefit-card__title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .benefit-card__text { font-size: 12px; color: var(--gray); line-height: 1.45; }
+    /* TWO TYPES */
+    .types__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+    .type-card   { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 28px; position: relative; overflow: hidden; }
+    .type-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--green); }
+    .type-card__models { display: flex; gap: 16px; align-items: flex-end; justify-content: center; margin-bottom: 20px; }
+    .type-card__models img { height: 300px; width: auto; max-width: 48%; object-fit: contain; filter: drop-shadow(0 6px 20px rgba(124,181,24,0.28)); }
+    .type-card__models img.secondary { height: 210px; }
+    .type-card__chips  { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .type-card__chip   { background: var(--green-glow); border: 1px solid rgba(124,181,24,0.3); border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--green); }
 
-    /* HOW IT WORKS */
-    .hiw { position: relative; overflow: hidden; background: var(--black-card); }
-    .hiw::before { content: ''; position: absolute; inset: 0; background: url('images/gym-train1.avif') center 30% / cover no-repeat; filter: brightness(0.22) saturate(0.7); z-index: 0; }
-    .hiw .container { position: relative; z-index: 1; }
-    .hiw__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 28px; position: relative; }
-    .hiw__steps::before { content: ''; position: absolute; top: 32px; left: 12.5%; right: 12.5%; height: 1px; background: linear-gradient(90deg, transparent, var(--green), transparent); pointer-events: none; }
-    .hiw__step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; }
-    .hiw__step-num { width: 48px; height: 48px; background: var(--black-card); border: 2px solid var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 20px; font-weight: 900; color: var(--green); margin-bottom: 14px; position: relative; z-index: 1; }
-    .hiw__step-icon { width: 28px; height: 28px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; }
-    .hiw__step-icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .hiw__step-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .hiw__step-text { font-size: 13px; color: var(--gray); }
+    /* WHY SECTION */
+    .why__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 28px; }
+    .why-card  { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 20px; display: flex; gap: 14px; transition: var(--transition); }
+    .why-card:hover { border-color: rgba(124,181,24,0.3); }
+    .why-card__icon { width: 40px; height: 40px; background: var(--green-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .why-card__icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .why-card__title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .why-card__text  { font-size: 12px; color: var(--gray); line-height: 1.6; }
 
-    /* MACHINE MODEL */
-    .machine__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .machine__specs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
-    .spec-item { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius); padding: 16px; }
-    .spec-item__label { font-size: 11px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-    .spec-item__val { font-size: 15px; font-weight: 700; color: var(--white); }
-    .machine__feature-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
-    .machine__feature-list li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--gray-light); }
-    .machine__feature-list li::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+    /* MODELOS COMERCIALES */
+    .modes__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .mode-card   { background: var(--black-card); border: 2px solid var(--black-border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; transition: var(--transition); }
+    .mode-card--featured { border-color: var(--green); background: linear-gradient(160deg, rgba(124,181,24,0.06) 0%, var(--black-card) 60%); }
+    .mode-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .mode-card__badge { display: inline-block; background: var(--green); color: var(--black); font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 16px; }
+    .mode-card__icon { width: 48px; height: 48px; background: var(--green-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .mode-card__icon svg { width: 24px; height: 24px; stroke: var(--green); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .mode-card__title { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
+    .mode-card__sub   { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 20px; }
+    .mode-card__list  { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; flex: 1; }
+    .mode-card__list li { font-size: 13px; color: var(--gray-light); display: flex; gap: 10px; align-items: flex-start; }
+    .mode-card__list .check { color: var(--green); font-weight: 900; flex-shrink: 0; }
+    .mode-card__highlight { background: rgba(124,181,24,0.08); border: 1px solid rgba(124,181,24,0.2); border-radius: var(--radius); padding: 12px 14px; font-size: 12px; color: var(--gray-light); line-height: 1.6; margin-bottom: 20px; }
+    .mode-card__highlight strong { color: var(--green); }
 
-    /* PRODUCTS */
-    .products__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 24px; }
-    .product-card { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 16px 14px; text-align: center; transition: var(--transition); cursor: default; }
-    .product-card:hover { border-color: rgba(124,181,24,0.4); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-    .product-card__img { width: 100%; aspect-ratio: 1/1; max-height: 80px; background: rgba(124,181,24,0.04); border: 1px dashed rgba(124,181,24,0.2); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 28px; }
-    .product-card__name { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-    .product-card__tag { font-size: 11px; color: var(--green); font-weight: 600; }
+    /* PAGO */
+    .pay-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 24px; }
+    .pay-cell { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius); padding: 16px; text-align: center; }
+    .pay-cell__pct   { font-size: 28px; font-weight: 900; color: var(--green); line-height: 1; }
+    .pay-cell__label { font-size: 11px; color: var(--gray); margin-top: 4px; }
+    .pay-cell__desc  { font-size: 12px; color: var(--gray-light); margin-top: 6px; font-weight: 600; }
 
-    /* BUSINESS MODELS */
-    .biz { position: relative; overflow: hidden; background: var(--black); }
-    .biz::before { content: ''; position: absolute; inset: 0; background: url('images/gym-weights.jpg') center 40% / cover no-repeat; filter: brightness(0.35) saturate(0.8); z-index: 0; }
-    .biz .container { position: relative; z-index: 2; }
-    .biz__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
-    .biz-card { background: var(--black); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 22px 20px; position: relative; transition: var(--transition); display: flex; flex-direction: column; }
-    .biz-card:hover { border-color: rgba(124,181,24,0.3); transform: translateY(-4px); }
-    .biz-card--featured { border-color: var(--green); box-shadow: 0 0 40px rgba(124,181,24,0.1); }
-    .biz-card--featured:hover { box-shadow: 0 0 60px rgba(124,181,24,0.2); }
-    .biz-card__badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--green); color: var(--black); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 18px; border-radius: 999px; white-space: nowrap; }
-    .biz-card__icon { width: 42px; height: 42px; background: var(--green-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
-    .biz-card__icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .biz-card__title { font-family: var(--font-head); font-size: 22px; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; }
-    .biz-card__sub { font-size: 13px; color: var(--green); font-weight: 600; margin-bottom: 12px; }
-    .biz-card__list { list-style: none; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-    .biz-card__list li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--gray-light); line-height: 1.4; }
-    .biz-card__list li .check { color: var(--green); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-    .biz-card__cta { margin-top: 16px; }
-    .biz-card__cta .btn { width: 100%; justify-content: center; }
+    /* RENTABILIDAD */
+    .rent__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+    .rent-card  { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 24px; }
+    .rent-card__title { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+    .rent-card__sub   { font-size: 12px; color: var(--gray); margin-bottom: 16px; line-height: 1.5; }
+    .rent-card__steps { display: flex; flex-direction: column; gap: 10px; }
+    .rent-step { display: flex; gap: 12px; align-items: flex-start; }
+    .rent-step__num  { width: 24px; height: 24px; background: var(--green-glow); border: 1px solid rgba(124,181,24,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: var(--green); flex-shrink: 0; margin-top: 1px; }
+    .rent-step__text { font-size: 12px; color: var(--gray-light); line-height: 1.5; }
+    .rent-step__text strong { color: var(--white); }
 
-    /* RENTAL */
-    .rental { background: #0d0f0d; background-image: radial-gradient(ellipse at top left, rgba(124,181,24,0.28) 0%, transparent 55%), radial-gradient(ellipse at bottom right, rgba(124,181,24,0.18) 0%, transparent 50%); border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); }
-    .rental__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; }
-    .rental__price-label { font-size: 12px; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-    .rental__price { font-family: var(--font-head); font-size: clamp(28px, 3.5vw, 44px); font-weight: 900; color: var(--green); line-height: 1; margin: 10px 0; }
-    .rental__price-month { font-size: 13px; color: var(--gray); margin-left: 4px; }
-    .rental__details { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
-    .rental__detail { background: rgba(255,255,255,0.04); border: 1px solid var(--black-border); border-radius: var(--radius); padding: 10px; }
-    .rental__detail-label { font-size: 11px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-    .rental__detail-val { font-size: 13px; font-weight: 700; }
-    .rental__visual { display: flex; flex-direction: column; gap: 14px; }
-    .rental__big-stat { background: var(--black-card); border: 1px solid rgba(124,181,24,0.2); border-radius: var(--radius-lg); padding: 14px; text-align: center; }
-    .rental__big-stat-num { font-family: var(--font-head); font-size: 32px; font-weight: 900; color: var(--green); line-height: 1; }
-    .rental__big-stat-label { font-size: 12px; color: var(--gray); margin-top: 4px; }
-    .rental__row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .rental__mini-stat { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius); padding: 10px; text-align: center; }
-    .rental__mini-num { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--white); }
-    .rental__mini-label { font-size: 11px; color: var(--gray); margin-top: 4px; }
+    /* INCLUYE */
+    .includes__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 24px; }
+    .inc-item { background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius); padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
+    .inc-item__icon { width: 32px; height: 32px; background: var(--green-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .inc-item__icon svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .inc-item__title { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+    .inc-item__text  { font-size: 11px; color: var(--gray); line-height: 1.5; }
 
-    /* TECH */
-    .tech__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; }
-    .tech__features { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-    .tech__feature { display: flex; align-items: center; gap: 12px; background: var(--black-card); border: 1px solid var(--black-border); border-radius: var(--radius); padding: 12px 16px; transition: var(--transition); }
-    .tech__feature:hover { border-color: rgba(124,181,24,0.3); }
-    .tech__feature-icon { width: 34px; height: 34px; background: var(--green-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .tech__feature-icon svg { width: 18px; height: 18px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .tech__feature-name { font-size: 13px; font-weight: 700; }
-    .tech__feature-desc { font-size: 13px; color: var(--gray); }
-
-    /* WHY PS */
-    .why { position: relative; overflow: hidden; background: var(--black); }
-    .why::before { content: ''; position: absolute; inset: 0; background: url('images/gym-train2.avif') center 40% / cover no-repeat; filter: brightness(0.28) saturate(0.75); z-index: 0; }
-    .why::after { display: none; }
-    .why .container { position: relative; z-index: 2; }
-    .why__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
-    .why-card { background: var(--black); border: 1px solid var(--black-border); border-radius: var(--radius-lg); padding: 14px; display: flex; gap: 14px; transition: var(--transition); }
-    .why-card:hover { border-color: rgba(124,181,24,0.25); transform: translateY(-3px); }
-    .why-card__icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--green-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .why-card__icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .why-card__title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .why-card__text { font-size: 13px; color: var(--gray); line-height: 1.5; }
-
-    /* DESIGN SELECTOR */
-    .design-section { background: var(--black-card); border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); }
-    .design__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
-    .design-card { background: var(--black); border: 1px solid var(--black-border); border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition); cursor: pointer; }
-    .design-card:hover { border-color: rgba(124,181,24,0.4); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
-    .design-card__img { aspect-ratio: 3/4; background: var(--black-card); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border-bottom: 1px solid var(--black-border); position: relative; overflow: hidden; }
-    .design-card__img::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(124,181,24,0.04) 0%, transparent 60%); }
-    .design-card__img svg { width: 32px; height: 32px; stroke: rgba(124,181,24,0.4); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-    .design-card__img-label { font-size: 11px; color: rgba(124,181,24,0.6); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
-    .design-card__body { padding: 12px 14px; }
-    .design-card__name { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
-    .design-card__sub { font-size: 11px; color: var(--gray); }
-    .design-card--coming { opacity: 0.5; }
-
-    /* CTA */
-    #beneficios { position: relative; overflow: hidden; background: #eef2eb; }
-    #beneficios::before { display: none; }
-    #beneficios::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,15,13,0.18) 0%, transparent 7%), linear-gradient(to top, rgba(13,15,13,0.18) 0%, transparent 7%); pointer-events: none; z-index: 0; }
-    #beneficios .container { position: relative; z-index: 1; }
-    #beneficios .section-title { color: #0d0f0d; font-size: clamp(18px, 2.2vw, 28px); }
-    #beneficios .section-title span { color: #5a7a00; }
-    #beneficios .section-sub { color: #4b5563; font-size: 13px; margin-top: 6px; }
-    #beneficios .tag { color: #4a6600; background: rgba(124,181,24,0.18); border-color: rgba(124,181,24,0.4); }
-    #beneficios .benefit-card { background: #f9fbf7; border-color: rgba(0,0,0,0.09); box-shadow: 0 4px 20px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.05); }
-    #beneficios .benefit-card:hover { border-color: rgba(124,181,24,0.45); box-shadow: 0 8px 32px rgba(124,181,24,0.14); }
-    #beneficios .benefit-card__title { color: #0d0f0d; }
-    #beneficios .benefit-card__text { color: #4b5563; }
-    #beneficios .benefit-card__icon { background: rgba(124,181,24,0.15); }
-    #beneficios .benefit-card__icon svg { stroke: #5a7a00; }
-
-    #productos { background: #f0f4ed; position: relative; overflow: hidden; }
-    #productos::before { display: none; }
-    #productos::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,15,13,0.20) 0%, transparent 8%), linear-gradient(to top, rgba(13,15,13,0.20) 0%, transparent 8%); pointer-events: none; z-index: 0; }
-    #productos .container { position: relative; z-index: 1; }
-    #productos .section-title { color: #0d0f0d; font-size: clamp(18px, 2.2vw, 28px); }
-    #productos .section-title span { color: #5a7a00; }
-    #productos .section-sub { color: #4b5563; font-size: 13px; margin-top: 6px; }
-    #productos .tag { color: #4a6600; background: rgba(124,181,24,0.18); border-color: rgba(124,181,24,0.4); }
-    #productos .product-card { background: #f9fbf7; border-color: rgba(0,0,0,0.09); box-shadow: 0 4px 16px rgba(0,0,0,0.09), 0 1px 3px rgba(0,0,0,0.05); }
-    #productos .product-card:hover { border-color: rgba(124,181,24,0.45); box-shadow: 0 8px 28px rgba(124,181,24,0.12); }
-    #productos .product-card__img { background: rgba(124,181,24,0.08); border-color: rgba(124,181,24,0.25); }
-    #productos .product-card__name { color: #0d0f0d; }
-
-    #maquina { position: relative; overflow: hidden; background: var(--black-card); }
-    #maquina::before { content: ''; position: absolute; inset: 0; background: url('images/ps86-bg.png') center / cover no-repeat; filter: brightness(0.55); z-index: 0; }
-    #maquina::after { display: none; }
-    #maquina .container { position: relative; z-index: 2; }
-
-    #tecnologia { position: relative; overflow: hidden; }
-    #tecnologia::before { content: ''; position: absolute; inset: 0; background: url('images/machine3.jpg') center 35% / cover no-repeat; filter: brightness(0.18) saturate(0.6); z-index: 0; }
-    #tecnologia::after { display: none; }
-    #tecnologia .container { position: relative; z-index: 2; }
-
+    /* CTA SECTION */
     .cta-section { position: relative; overflow: hidden; text-align: center; }
-    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(124,181,24,0.13) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 50% 100%, rgba(124,181,24,0.07) 0%, transparent 60%), url('images/gym-machine.jpg') center / cover no-repeat; pointer-events: none; }
-    .cta-section::after { content: ''; position: absolute; inset: 0; background: rgba(13,15,13,0.88); z-index: 0; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: url('images/gym-train2.avif') center / cover no-repeat; pointer-events: none; }
+    .cta-section::after  { content: ''; position: absolute; inset: 0; background: rgba(13,15,13,0.90); z-index: 0; }
     .cta-section .container { position: relative; z-index: 1; }
-    .cta-section__title { font-family: var(--font-head); font-size: clamp(22px, 3vw, 40px); font-weight: 900; text-transform: uppercase; line-height: 1; max-width: 800px; margin: 0 auto 14px; }
-    .cta-section__sub { font-size: 14px; color: var(--gray); max-width: 540px; margin: 0 auto 16px; }
-    .cta-section__buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .cta-section__title { font-family: var(--font-head); font-size: clamp(22px,3vw,40px); font-weight: 900; text-transform: uppercase; line-height: 1.05; max-width: 700px; margin: 0 auto 14px; }
+    .cta-section__sub   { font-size: 14px; color: var(--gray); max-width: 480px; margin: 0 auto 24px; }
+    .cta-section__buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-    /* WA FLOAT */
-    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37,211,102,0.4); z-index: 900; text-decoration: none; transition: var(--transition); animation: wabounce 3s ease-in-out infinite; }
-    .wa-float:hover { transform: scale(1.1) !important; box-shadow: 0 12px 40px rgba(37,211,102,0.6); animation: none; }
-    @keyframes wabounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--black-border); }
+    .faq-q { width: 100%; background: none; border: none; color: var(--white); font-family: var(--font-body); font-size: 15px; font-weight: 600; text-align: left; padding: 18px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: color 0.2s ease; }
+    .faq-q:hover { color: var(--green); }
+    .faq-icon { font-size: 20px; color: var(--green); flex-shrink: 0; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); line-height: 1; }
+    .faq-q.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { font-size: 14px; color: var(--gray); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s ease; padding: 0; }
+    .faq-a.open { max-height: 300px; padding-bottom: 18px; }
 
     /* FOOTER */
     footer { border-top: 1px solid var(--black-border); padding: 48px 0; }
-    .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer__copy { font-size: 13px; color: var(--gray); margin-top: 6px; }
-    .footer__links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .footer__inner { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer__copy   { font-size: 12px; color: var(--gray); margin-top: 6px; }
+    .footer__links  { display: flex; gap: 16px; flex-wrap: wrap; }
     .footer__links a { font-size: 13px; color: var(--gray); text-decoration: none; transition: var(--transition); }
     .footer__links a:hover { color: var(--green); }
 
     .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--black-border), transparent); }
 
+    /* WA FLOAT */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37,211,102,0.4); z-index: 900; text-decoration: none; transition: var(--transition); animation: wabounce 3s ease-in-out infinite; }
+    .wa-float:hover { transform: scale(1.1) !important; animation: none; }
+    .wa-float::before { content: ''; position: absolute; inset: -6px; border: 2px solid rgba(37,211,102,0.4); border-radius: 50%; animation: pulseRing 2.5s ease-out infinite; }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+    @keyframes wabounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);} }
+    @keyframes pulseRing { 0%{transform:scale(1);opacity:0.7;}100%{transform:scale(1.55);opacity:0;} }
+
+    /* SCROLL PROGRESS */
+    .scroll-progress { position: fixed; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--green), #8fd11e); transform-origin: left; transform: scaleX(0); z-index: 10000; pointer-events: none; }
+
     /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.12s; }
-    .reveal-delay-2 { transition-delay: 0.24s; }
-    .reveal-delay-3 { transition-delay: 0.36s; }
-    .reveal-delay-4 { transition-delay: 0.48s; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* HERO ANIMATIONS */
+    @keyframes heroLineIn { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+    .hero__badge     { animation: heroLineIn 0.6s cubic-bezier(0.16,1,0.3,1) 0.15s both; }
+    .hero__title-line{ display:block; animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero__title-line:nth-child(1){ animation-delay:0.25s; }
+    .hero__title-line:nth-child(2){ animation-delay:0.38s; }
+    .hero__title-line:nth-child(3){ animation-delay:0.51s; }
+    .hero__sub  { animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+    .hero__ctas { animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.65s both; }
+    .hero__stats{ animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.75s both; }
+    .hero__visual{ animation: heroLineIn 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+
+    /* MISC */
+    .btn-primary { position: relative; overflow: hidden; }
+    .btn-primary::after { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent); transition:left 0.45s ease; pointer-events:none; }
+    .btn-primary:hover::after { left:160%; }
+
+    /* LIGHT SECTIONS */
+    .section--light { background: #f3f2ee !important; }
+    .section--light .section-title { color: #111811; }
+    .section--light .section-title span { color: var(--green-dim); }
+    .section--light .section-sub { color: #555f50; }
+    .section--light .tag { color: #4a7010; background: rgba(124,181,24,0.10); border-color: rgba(100,155,20,0.35); }
+    .section--light .why-card { background: #fff; border-color: #dde5d0; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .section--light .why-card:hover { border-color: var(--green); box-shadow: 0 4px 18px rgba(124,181,24,0.12); }
+    .section--light .why-card__icon { background: rgba(124,181,24,0.10); }
+    .section--light .why-card__title { color: #111811; }
+    .section--light .why-card__text { color: #6b7568; }
+    .section--light .inc-item { background: #fff; border-color: #dde5d0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .section--light .inc-item__icon { background: rgba(124,181,24,0.10); }
+    .section--light .inc-item__title { color: #111811; }
+    .section--light .inc-item__text { color: #6b7568; }
+    .section--light .rent-card { background: #fff; border-color: #dde5d0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .section--light .rent-card__title { color: #111811; }
+    .section--light .rent-card__sub { color: #6b7568; }
+    .section--light .rent-step__text { color: #555f50; }
+    .section--light .rent-step__text strong { color: #111811; }
+    .section--light .rent-step__num { background: rgba(124,181,24,0.10); border-color: rgba(100,155,20,0.35); color: #4a7010; }
+    .section--light .faq-item { border-bottom-color: #dde5d0; }
+    .section--light .faq-q { color: #111811; }
+    .section--light .faq-q:hover { color: var(--green-dim); }
+    .section--light .faq-a { color: #6b7568; }
+
+    /* GYM PHOTO BG (for "dos tipos" section) */
+    .section--gym { position: relative; overflow: hidden; }
+    .section--gym::before { content: ''; position: absolute; inset: 0; background: url('images/gym-train2.avif') center/cover no-repeat; opacity: 0.12; pointer-events: none; z-index: 0; }
+    .section--gym > .container { position: relative; z-index: 1; }
 
     /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .why__grid    { grid-template-columns: repeat(2,1fr); }
+      .includes__grid { grid-template-columns: repeat(2,1fr); }
+    }
     @media (max-width: 960px) {
-      .hero__inner         { grid-template-columns: 1fr; gap: 50px; }
-      .hero__visual        { order: -1; }
-      .hero__machine-wrap  { max-width: 280px; margin: 0 auto; }
-      .machine__inner      { grid-template-columns: 1fr; gap: 12px; }
-      .rental__inner       { grid-template-columns: 1fr; gap: 12px; }
-      .tech__inner         { grid-template-columns: 1fr; gap: 12px; }
-      .biz__grid           { grid-template-columns: 1fr; }
-      .hiw__steps          { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .hiw__steps::before  { display: none; }
-      .why__grid           { grid-template-columns: 1fr; }
-      .design__grid        { grid-template-columns: repeat(2, 1fr); }
-      .nav__links          { display: none; }
+      .hero__inner  { grid-template-columns: 1fr; gap: 40px; }
+      .hero__visual { order: -1; }
+      .nav__links   { display: none; }
       .nav__cta .btn-outline { display: none; }
-      .hamburger           { display: flex; }
+      .hamburger    { display: flex; }
+      .types__grid  { grid-template-columns: 1fr; }
+      .modes__grid  { grid-template-columns: 1fr; }
+      .rent__grid   { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 640px) {
-      .section             { padding: 20px 0; }
-      .hiw__steps          { grid-template-columns: 1fr; }
-      .machine__specs      { grid-template-columns: 1fr 1fr; }
-      .rental__details     { grid-template-columns: 1fr; }
-      .rental__row         { grid-template-columns: 1fr 1fr; }
-      .why-card            { flex-direction: column; }
-      .form-row            { grid-template-columns: 1fr; }
-      .contact-form        { padding: 28px 20px; }
-      .hero__stats         { gap: 14px; }
-      .benefits__grid      { grid-template-columns: 1fr; }
-      .design__grid        { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .wa-float            { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+      .section        { padding: 40px 0; }
+      .models__grid   { grid-template-columns: 1fr; }
+      .why__grid      { grid-template-columns: 1fr; }
+      .includes__grid { grid-template-columns: 1fr; }
+      .pay-row        { grid-template-columns: 1fr; }
+      .wa-float       { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+      .hero__stats    { gap: 16px; }
     }
-
-    /* ============================================================
-       ANIMATION SYSTEM ENHANCEMENTS
-       ============================================================ */
-
-    /* Hero entrance keyframes */
-    @keyframes heroLineIn {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes heroBadgeIn {
-      from { opacity: 0; transform: translateX(-14px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes heroVisualIn {
-      from { opacity: 0; transform: scale(0.93) translateY(16px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @keyframes machineFloat {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-10px); }
-    }
-
-    /* Hero element animations */
-    .hero__badge       { animation: heroBadgeIn 0.6s cubic-bezier(0.16,1,0.3,1) 0.15s both; }
-    .hero__title-line  { display: block; animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
-    .hero__title-line:nth-child(1) { animation-delay: 0.25s; }
-    .hero__title-line:nth-child(2) { animation-delay: 0.38s; }
-    .hero__title-line:nth-child(3) { animation-delay: 0.51s; }
-    .hero__sub         { animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
-    .hero__ctas        { animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.65s both; }
-    .hero__stats       { animation: heroLineIn 0.7s cubic-bezier(0.16,1,0.3,1) 0.78s both; }
-    .hero__visual      { animation: heroVisualIn 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
-    .hero__machine-wrap { animation: machineFloat 5s ease-in-out infinite; }
-
-    /* Better spring easing for scroll reveals */
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* Nav underline from center */
-    .nav__links a { position: relative; }
-    .nav__links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 50%;
-      width: 0; height: 1.5px;
-      background: var(--green);
-      transform: translateX(-50%);
-      transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
-    }
-    .nav__links a:hover::after { width: 100%; }
-
-    /* Button shimmer on hover */
-    .btn-primary { position: relative; overflow: hidden; }
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-      transition: left 0.45s ease;
-      pointer-events: none;
-    }
-    .btn-primary:hover::after { left: 160%; }
-
-    /* WA float pulse ring */
-    .wa-float::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border: 2px solid rgba(37,211,102,0.45);
-      border-radius: 50%;
-      animation: pulseRing 2.5s ease-out infinite;
-    }
-    @keyframes pulseRing {
-      0%   { transform: scale(1); opacity: 0.7; }
-      100% { transform: scale(1.55); opacity: 0; }
-    }
-
-    /* Tech feature arrow */
-    .tech__feature .tech__arrow {
-      margin-left: auto;
-      color: var(--green);
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-    .tech__feature:hover .tech__arrow { opacity: 1; transform: translateX(0); }
-
-    /* Spec item hover lift */
-    .spec-item { transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1); }
-    .spec-item:hover { border-color: rgba(124,181,24,0.35); transform: translateY(-2px); }
-
-    /* HIW step number glow */
-    .hiw__step-num { transition: box-shadow 0.3s ease, background 0.3s ease; }
-    .hiw__step:hover .hiw__step-num { box-shadow: 0 0 28px rgba(124,181,24,0.5); background: rgba(124,181,24,0.08); }
-
-    /* Benefit card icon pulse */
-    .benefit-card__icon { transition: background 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1); }
-    .benefit-card:hover .benefit-card__icon { background: rgba(124,181,24,0.22); transform: scale(1.06); }
-
-    /* Featured biz card breathing glow */
-    @keyframes featuredGlow {
-      0%, 100% { box-shadow: 0 0 40px rgba(124,181,24,0.1); }
-      50%       { box-shadow: 0 0 65px rgba(124,181,24,0.22); }
-    }
-    .biz-card--featured { animation: featuredGlow 3.5s ease-in-out infinite; }
-
-    /* Product card emoji scale */
-    .product-card__img { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); }
-    .product-card:hover .product-card__img { transform: scale(1.1); }
-
-    /* Machine section images hover */
-    #maquina img { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
-    #maquina img:hover { transform: scale(1.03); box-shadow: 0 0 60px rgba(124,181,24,0.2); }
-
-    /* Scroll progress bar */
-    .scroll-progress {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 2px;
-      background: linear-gradient(90deg, var(--green) 0%, #8fd11e 100%);
-      transform-origin: left;
-      transform: scaleX(0);
-      z-index: 10000;
-      pointer-events: none;
-    }
-
-    /* Tag letter-spacing reveal */
-    @keyframes tagIn {
-      from { opacity: 0; letter-spacing: 6px; transform: translateY(6px); }
-      to   { opacity: 1; letter-spacing: 2px; transform: translateY(0); }
-    }
-    .reveal.visible .tag { animation: tagIn 0.55s cubic-bezier(0.16,1,0.3,1) 0.05s both; }
-
-    /* HIW connector line draw on scroll */
-    @keyframes lineGrow {
-      from { transform: scaleX(0); }
-      to   { transform: scaleX(1); }
-    }
-    .hiw__steps::before { transform-origin: left; }
-    .hiw__steps--drawn::before { animation: lineGrow 1s cubic-bezier(0.16,1,0.3,1) forwards; }
-
-    /* Active nav highlight */
-    .nav__links a.nav-active { color: var(--white); }
-    .nav__links a.nav-active::after { width: 100%; left: 50%; }
-
-    /* Stat number pop after counter completes */
-    @keyframes statPop {
-      0%   { transform: scale(1); }
-      45%  { transform: scale(1.18); color: #8fd11e; }
-      100% { transform: scale(1); }
-    }
-    .hero__stat-num.popped { animation: statPop 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
-
-    /* Reduced motion overrides */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .reveal { opacity: 1 !important; transform: none !important; }
-      .hero__badge, .hero__title-line, .hero__sub,
-      .hero__ctas, .hero__stats, .hero__visual {
-        animation: none !important; opacity: 1 !important; transform: none !important;
-      }
+      *,*::before,*::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; }
+      .reveal { opacity:1!important; transform:none!important; }
     }
   </style>
 </head>
@@ -738,27 +337,19 @@
 
   <nav class="nav" id="navbar">
     <div class="nav__inner">
-      <a href="#" class="nav__logo">
-        <div class="nav__logo-mark">
-          <img src="images/logo-ps.png" alt="Power Shake" />
-        </div>
+      <a href="#inicio" class="nav__logo">
         <span class="nav__logo-text">POWER<span>SHAKE</span></span>
       </a>
-
       <ul class="nav__links">
-        <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#maquina">PS86</a></li>
-        <li><a href="#ps22">PS22</a></li>
-        <li><a href="#ps78">PS78</a></li>
-        <li><a href="#modelos">Modelos</a></li>
-        <li><a href="#tecnologia">Tecnología</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#maquinas">Máquinas</a></li>
+        <li><a href="#como-acceder">Compra / Alquiler</a></li>
+        <li><a href="#que-incluye">Qué incluye</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-
       <div class="nav__cta">
-        <a href="https://wa.me/5491151381311" class="btn btn-wa" target="_blank" rel="noopener" style="padding:10px 20px;font-size:14px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <a href="https://wa.me/5491151381311" class="btn btn-wa" target="_blank" rel="noopener" style="padding:9px 18px;font-size:13px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -769,12 +360,12 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#beneficios" onclick="closeMobile()">Beneficios</a>
-    <a href="#maquina"    onclick="closeMobile()">Máquina PS86</a>
-    <a href="#modelos"    onclick="closeMobile()">Modelos de negocio</a>
-    <a href="#tecnologia" onclick="closeMobile()">Tecnología</a>
-    <a href="#contacto"   onclick="closeMobile()">Contacto</a>
-    <a href="https://wa.me/5491151381311" target="_blank" rel="noopener" style="color:#25D366;border:none;font-weight:700;">Hablar por WhatsApp</a>
+    <a href="#inicio"        onclick="closeMobile()">Inicio</a>
+    <a href="#maquinas"      onclick="closeMobile()">Máquinas</a>
+    <a href="#como-acceder"  onclick="closeMobile()">Compra / Alquiler</a>
+    <a href="#que-incluye"   onclick="closeMobile()">Qué incluye</a>
+    <a href="#contacto"      onclick="closeMobile()">Contacto</a>
+    <a href="https://wa.me/5491151381311" target="_blank" rel="noopener" style="color:#25D366;font-weight:700;">Hablar por WhatsApp</a>
   </div>
 
   <!-- HERO -->
@@ -785,50 +376,43 @@
       <div class="hero__content">
         <div class="hero__badge">
           <div class="hero__badge-dot"></div>
-          <span>Modelo PS86 · Disponible ahora</span>
+          <span>2 modelos disponibles · Argentina</span>
         </div>
         <h1 class="hero__title">
-          <span class="hero__title-line line-green">Suplementación inteligente</span>
-          <span class="hero__title-line">al instante</span>
-          <span class="hero__title-line">para tu gimnasio.</span>
+          <span class="hero__title-line line-green">Una inversión</span>
+          <span class="hero__title-line">que se paga</span>
+          <span class="hero__title-line">sola.</span>
         </h1>
         <p class="hero__sub">
-          <strong>Power Shake PS86</strong> le da a tus clientes la suplementación que necesitan para recuperarse y rendir al máximo — sin que vos tengas que hacer nada.
+          Máquinas expendedoras inteligentes para operar tu propio negocio automatizado. Comprá o alquilá la tuya y gestioná ventas, productos y stock de forma remota.
         </p>
         <div class="hero__ctas">
-          <a href="#contacto" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            Quiero instalar una máquina
+          <a href="#maquinas" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Ver máquinas
           </a>
-          <a href="#modelos" class="btn btn-outline">Conocé los modelos</a>
+          <a href="#contacto" class="btn btn-outline">Quiero recibir información</a>
         </div>
         <div class="hero__stats">
           <div>
-            <div class="hero__stat-num">3</div>
-            <div class="hero__stat-label">Modelos de negocio</div>
+            <div class="hero__stat-num">+2</div>
+            <div class="hero__stat-label">Años de experiencia</div>
+          </div>
+          <div>
+            <div class="hero__stat-num">2</div>
+            <div class="hero__stat-label">Modelos</div>
           </div>
           <div>
             <div class="hero__stat-num">24/7</div>
             <div class="hero__stat-label">Operación continua</div>
           </div>
           <div>
-            <div class="hero__stat-num">$0</div>
-            <div class="hero__stat-label">Inversión inicial</div>
+            <div class="hero__stat-num">6M</div>
+            <div class="hero__stat-label">Garantía</div>
           </div>
         </div>
       </div>
 
-      <div class="hero__visual">
-        <div class="hero__machine-wrap">
-          <div class="hero__machine-glow"></div>
-          <div style="position:relative;z-index:1;">
-            <div class="hero__model-badge">PS86</div>
-            <div style="border-radius:16px;overflow:hidden;box-shadow:0 0 60px rgba(124,181,24,0.2);background:#111;">
-              <img src="images/gym-foto1.jpg?v=2" alt="Power Shake PS86 – Máquina de suplementación automática" style="width:100%;height:auto;display:block;" />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -839,345 +423,324 @@
         <span class="social-proof__label">Suplementación oficial</span>
         <span class="social-proof__logo--star">Star Nutrition</span>
         <span class="social-proof__dot"></span>
-        <span class="social-proof__stat">Presencia en gimnasios premium de Argentina</span>
+        <span class="social-proof__stat">Presencia en Argentina</span>
         <span class="social-proof__dot"></span>
         <span class="social-proof__stat">Tecnología de vending 4.0</span>
+        <span class="social-proof__dot"></span>
+        <span class="social-proof__stat">Soporte técnico post-venta</span>
       </div>
     </div>
   </div>
 
-  <!-- BENEFITS -->
-  <section class="section benefits" id="beneficios">
+  <!-- NUESTRAS MÁQUINAS -->
+  <section class="section" id="maquinas">
     <div class="container">
-      <div class="reveal">
-        <span class="tag">Para gimnasios</span>
-        <h2 class="section-title">Tu gimnasio.<br><span>Más rentable.</span></h2>
-        <p class="section-sub">Sin contratar más personal. Sin complicaciones. Power Shake convierte el espacio de tu gym en un nuevo canal de ingresos.</p>
+      <div class="reveal" style="text-align:center;">
+        <span class="tag">Nuestros modelos</span>
+        <h2 class="section-title" style="text-align:center;">Dos máquinas.<br><span>Una sola decisión.</span></h2>
+        <p class="section-sub" style="margin:10px auto 0;max-width:520px;">Elegís el modelo que mejor se adapta a tu espacio. La máquina trabaja por vos.</p>
       </div>
 
-      <div class="benefits__grid">
-        <div class="benefit-card reveal reveal-delay-1">
-          <div class="benefit-card__icon">
-            <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.5 1.5 0 010 3h-3a1.5 1.5 0 000 3H15"/></svg>
+      <div class="models__grid">
+        <!-- PS86 -->
+        <div class="model-card reveal reveal-delay-1">
+          <div class="model-card__img">
+            <img src="images/ps86-detail.png" alt="Power Shake PS86" />
           </div>
-          <div class="benefit-card__title">Nueva fuente de ingresos</div>
-          <div class="benefit-card__text">Autogestionable. Sin esfuerzo ni personal adicional — solo reponer insumos cuando sea necesario.</div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-2">
-          <div class="benefit-card__icon">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <div class="model-card__body">
+            <div class="model-card__line">Suplementos deportivos</div>
+            <div class="model-card__name">PS86</div>
+            <div class="model-card__desc">Prepara y dispensa suplementos deportivos al instante. Hasta 7 productos y operación completamente automatizada.</div>
+            <div class="model-card__specs">
+              <div class="model-card__spec"><span class="model-card__spec-label">Pantalla</span><span class="model-card__spec-val">Touch HD</span></div>
+              <div class="model-card__spec"><span class="model-card__spec-label">Capacidad</span><span class="model-card__spec-val">Hasta 7 productos</span></div>
+              <div class="model-card__spec"><span class="model-card__spec-label">Dimensiones</span><span class="model-card__spec-val">Consultar ficha</span></div>
+            </div>
+            <div class="model-card__cta">
+              <a href="https://wa.me/5491151381311?text=Hola%2C%20me%20interesa%20el%20modelo%20PS86" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;font-size:13px;">Consultar PS86</a>
+            </div>
           </div>
-          <div class="benefit-card__title">Sin personal adicional</div>
-          <div class="benefit-card__text">La máquina opera sola. Tus empleados no tienen que gestionar ventas, stock ni preparación de batidos.</div>
         </div>
-        <div class="benefit-card reveal reveal-delay-3">
-          <div class="benefit-card__icon">
-            <svg class="ico" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+
+        <!-- PS22 -->
+        <div class="model-card reveal reveal-delay-2">
+          <div class="model-card__img">
+            <img src="images/ps22-machine.png" alt="Power Shake PS22" />
           </div>
-          <div class="benefit-card__title">Experiencia premium</div>
-          <div class="benefit-card__text">Tus socios acceden a suplementación de calidad en el momento exacto que la necesitan, dentro de tu gym.</div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-4">
-          <div class="benefit-card__icon">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          <div class="model-card__body">
+            <div class="model-card__line">Suplementos deportivos</div>
+            <div class="model-card__name">PS22</div>
+            <div class="model-card__desc">Prepara y dispensa suplementos deportivos al instante. Hasta 4 productos y operación completamente automatizada.</div>
+            <div class="model-card__specs">
+              <div class="model-card__spec"><span class="model-card__spec-label">Pantalla</span><span class="model-card__spec-val">18.5" táctil</span></div>
+              <div class="model-card__spec"><span class="model-card__spec-label">Temperatura</span><span class="model-card__spec-val">0° – 95°C</span></div>
+              <div class="model-card__spec"><span class="model-card__spec-label">Dimensiones</span><span class="model-card__spec-val">70 × 58 × 52 cm</span></div>
+            </div>
+            <div class="model-card__cta">
+              <a href="https://wa.me/5491151381311?text=Hola%2C%20me%20interesa%20el%20modelo%20PS22" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;font-size:13px;">Consultar PS22</a>
+            </div>
           </div>
-          <div class="benefit-card__title">Diferenciación real</div>
-          <div class="benefit-card__text">Posicioná tu gimnasio en otra categoría. Power Shake es tech. Es premium. Es el futuro del fitness.</div>
         </div>
-        <div class="benefit-card reveal reveal-delay-1">
-          <div class="benefit-card__icon">
-            <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </div>
-          <div class="benefit-card__title">Disponible 24/7</div>
-          <div class="benefit-card__text">La máquina funciona siempre. Incluso cuando tu staff no está, la suplementación sigue activa para tus socios.</div>
-        </div>
-        <div class="benefit-card reveal reveal-delay-2">
-          <div class="benefit-card__icon">
-            <svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 9h2M11 9h6M7 13h4M15 13h2"/></svg>
-          </div>
-          <div class="benefit-card__title">Control total</div>
-          <div class="benefit-card__text">Accedé a un dashboard con ventas en tiempo real, stock y reportes desde cualquier dispositivo y en cualquier momento.</div>
-        </div>
+
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- HOW IT WORKS -->
-  <section class="section hiw" id="como-funciona">
-    <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <span class="tag">Experiencia del usuario</span>
-        <h2 class="section-title" style="text-align:center;">¿Cómo funciona<br><span>la máquina?</span></h2>
-        <p class="section-sub" style="margin:14px auto 0;text-align:center;">Tu socio elige, paga y retira. Todo en minutos. Sin esperas, sin staff.</p>
-      </div>
+  <!-- PS86 SPORT CLUB SHOWCASE -->
+  <section style="overflow:hidden;" class="reveal">
+    <div style="display:grid;grid-template-columns:1fr 1fr;min-height:560px;">
+      <div style="background:linear-gradient(135deg,#080b08 0%,#0d150d 100%);display:flex;align-items:center;padding:clamp(32px,5vw,72px) clamp(24px,4vw,60px);border-right:1px solid rgba(124,181,24,0.15);">
+        <div style="max-width:420px;">
+          <span class="tag" style="margin-bottom:20px;display:inline-block;">PS86 · Entorno real</span>
+          <h2 style="font-family:var(--font-head);font-size:clamp(32px,3.5vw,56px);font-weight:900;text-transform:uppercase;line-height:1.0;color:#fff;margin:0 0 20px;">Así luce una Power Shake<br><span style="color:var(--green);">en un SportClub.</span></h2>
+          <p style="font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 32px;">Una máquina real, instalada y operando en un espacio de alto tránsito.</p>
 
-      <div class="hiw__steps reveal">
-        <div class="hiw__step">
-          <div class="hiw__step-num">01</div>
-          <div class="hiw__step-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 11V6a2 2 0 114 0v5m-4 0a2 2 0 00-2 2v1a6 6 0 0012 0V13a2 2 0 00-2-2m-4 0h4"/></svg>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:36px;height:36px;background:rgba(124,181,24,0.12);border:1px solid rgba(124,181,24,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#fff;letter-spacing:0.3px;">Operación 24/7</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.45);">La máquina puede vender sin atención permanente.</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:36px;height:36px;background:rgba(124,181,24,0.12);border:1px solid rgba(124,181,24,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#fff;letter-spacing:0.3px;">Pago 100% digital</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.45);">Una experiencia de compra rápida y simple.</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:36px;height:36px;background:rgba(124,181,24,0.12);border:1px solid rgba(124,181,24,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:#fff;letter-spacing:0.3px;">Integrada al espacio</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.45);">Personalizable para adaptarse a la identidad de cada ubicación.</div>
+              </div>
+            </div>
           </div>
-          <div class="hiw__step-title">Elegís</div>
-          <div class="hiw__step-text">Seleccionás tu producto desde la pantalla touch: sabor, proteína, colágeno, creatina o electrolitos.</div>
+
+          <a href="#como-acceder" class="btn btn-primary">Ver cómo acceder a una máquina</a>
         </div>
-        <div class="hiw__step">
-          <div class="hiw__step-num">02</div>
-          <div class="hiw__step-icon">
-            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
-          </div>
-          <div class="hiw__step-title">Pagás</div>
-          <div class="hiw__step-text">Escaneás el QR y pagás con Mercado Pago o billetera digital. Sin efectivo.</div>
-        </div>
-        <div class="hiw__step">
-          <div class="hiw__step-num">03</div>
-          <div class="hiw__step-icon">
-            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
-          </div>
-          <div class="hiw__step-title">Retirás</div>
-          <div class="hiw__step-text">La máquina prepara y dispensa el vaso con tu suplemento en segundos.</div>
-        </div>
-        <div class="hiw__step">
-          <div class="hiw__step-num">04</div>
-          <div class="hiw__step-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <div class="hiw__step-title">Listo</div>
-          <div class="hiw__step-text">Batido listo. El socio entrena con la suplementación justa en el momento justo.</div>
-        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;min-height:400px;">
+        <img src="images/gym-bg-ps22.jpg" alt="PS86 en Sport Club Arribeños" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;" />
       </div>
     </div>
   </section>
 
-  <!-- MACHINE MODEL PS86 -->
-  <section class="section" id="maquina" style="padding:28px 0;">
+
+  <div class="divider"></div>
+
+  <!-- POR QUÉ POWER SHAKE -->
+  <section class="section section--light" id="por-que">
     <div class="container">
-      <div class="machine__inner" style="gap:28px;">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;">
+
+        <!-- Dashboard de ventas -->
+        <div class="reveal" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.45);">
+          <img src="images/dashboard-laptop.webp" alt="Software de ventas Power Shake" style="width:100%;display:block;object-fit:contain;background:#0a0c0a;" />
+        </div>
+
+        <!-- Beneficios -->
         <div class="reveal">
-          <img src="images/ps86-detail.png" alt="Power Shake PS86 – Vista detalle" style="width:100%;display:block;object-fit:contain;max-height:500px;" />
-        </div>
-        <div class="reveal reveal-delay-2">
-          <span class="tag">El modelo</span>
-          <h2 class="section-title" style="font-size:clamp(16px,1.8vw,24px);">Power Shake<br><span>PS86</span></h2>
-          <p class="section-sub" style="font-size:13px;margin-top:8px;">Instalás una vez, la máquina trabaja sola. Tus socios tienen sus suplementos, vos tenés un ingreso extra.</p>
-          <div class="machine__specs" style="margin-top:14px;gap:8px;">
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Modelo</div><div class="spec-item__val" style="font-size:13px;">PS86</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pantalla</div><div class="spec-item__val" style="font-size:13px;">Touch HD</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Productos</div><div class="spec-item__val" style="font-size:13px;">Hasta 7 opciones</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pago</div><div class="spec-item__val" style="font-size:13px;">QR / Digital</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Operación</div><div class="spec-item__val" style="font-size:13px;">24/7</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Control</div><div class="spec-item__val" style="font-size:13px;">Remoto</div></div>
+          <span class="tag">Controlá tu máquina desde cualquier lugar</span>
+          <h2 class="section-title" style="margin-top:8px;">Controlá tu máquina<br><span>desde cualquier lugar.</span></h2>
+          <div style="display:flex;flex-direction:column;gap:18px;margin-top:20px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div class="why-card__icon" style="flex-shrink:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg></div>
+              <div><div class="why-card__title">Pagos digitales</div><div class="why-card__text">Cobros simples y sin manejo de efectivo.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div class="why-card__icon" style="flex-shrink:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+              <div><div class="why-card__title">Gestión remota</div><div class="why-card__text">Administrá precios, productos y configuración a distancia.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div class="why-card__icon" style="flex-shrink:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+              <div><div class="why-card__title">Dashboard en tiempo real</div><div class="why-card__text">Consultá ventas, stock y rendimiento desde un solo lugar.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div class="why-card__icon" style="flex-shrink:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+              <div><div class="why-card__title">Operación 24/7</div><div class="why-card__text">Tu máquina puede vender incluso cuando vos no estás.</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div class="why-card__icon" style="flex-shrink:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <div><div class="why-card__title">Pantalla publicitaria</div><div class="why-card__text">Mostrá promociones, productos o contenido de tu marca.</div></div>
+            </div>
           </div>
-          <ul class="machine__feature-list" style="margin-top:12px;gap:8px;">
-            <li style="font-size:13px;">Dispensado automático en segundos</li>
-            <li style="font-size:13px;">Pantalla publicitaria integrada</li>
-            <li style="font-size:13px;">Dashboard de ventas en tiempo real</li>
-            <li style="font-size:13px;">Control remoto de stock e inventario</li>
-            <li style="font-size:13px;">Diseño compacto, no ocupa espacio</li>
-            <li style="font-size:13px;">Instalación y setup incluido</li>
-          </ul>
         </div>
+
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- MACHINE MODEL PS22 -->
-  <section class="section" id="ps22" style="background:url('images/gym-bg-ps22.avif') center/cover no-repeat; padding: 32px 0; position:relative;">
-    <div style="position:absolute;inset:0;background:rgba(10,14,10,0.78);z-index:0;"></div>
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="machine__inner" style="direction:rtl; gap:28px;">
-        <div class="reveal" style="direction:ltr;">
-          <img src="images/ps22-machine.png" alt="Power Shake PS22 – Modelo compacto" style="width:100%;display:block;object-fit:contain;max-height:400px;" />
-        </div>
-        <div class="reveal reveal-delay-2" style="direction:ltr;">
-          <span class="tag">Modelo compacto</span>
-          <h2 class="section-title" style="font-size:clamp(16px,1.8vw,24px);">Power Shake<br><span>PS22</span></h2>
-          <p class="section-sub" style="font-size:13px;margin-top:8px;">Batidos al instante, frío o caliente. La PS22 mezcla automáticamente y entrega en segundos. Ideal para espacios reducidos: vestuarios, pasillos y lobbies.</p>
-          <div class="machine__specs" style="margin-top:14px;gap:8px;">
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pantalla</div><div class="spec-item__val" style="font-size:13px;">18.5" táctil</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Temperatura</div><div class="spec-item__val" style="font-size:13px;">0° – 95°C</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Contenedores</div><div class="spec-item__val" style="font-size:13px;">4 x 4 litros</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pago</div><div class="spec-item__val" style="font-size:13px;">Mercado Pago / QR</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Dimensiones</div><div class="spec-item__val" style="font-size:13px;">70 × 58 × 52 cm</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Peso</div><div class="spec-item__val" style="font-size:13px;">≤ 43 kg</div></div>
-          </div>
-          <ul class="machine__feature-list" style="margin-top:12px;gap:8px;">
-            <li style="font-size:13px;">Mezcla automática al instante</li>
-            <li style="font-size:13px;">Bebidas frías y calientes en el mismo equipo</li>
-            <li style="font-size:13px;">Pantalla táctil con catálogo de productos</li>
-            <li style="font-size:13px;">Pago con Mercado Pago QR</li>
-            <li style="font-size:13px;">Dashboard de ventas en tiempo real</li>
-            <li style="font-size:13px;">Instalación y setup incluido</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- MACHINE MODEL PS78 -->
-  <section class="section" id="ps78" style="background:url('images/lobby-bg-ps78.png') center/cover no-repeat; padding: 32px 0; position:relative;">
-    <div style="position:absolute;inset:0;background:rgba(10,14,10,0.75);z-index:0;"></div>
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="machine__inner" style="gap:28px;">
-        <div class="reveal">
-          <span class="tag">Modelo grande</span>
-          <h2 class="section-title" style="font-size:clamp(16px,1.8vw,24px);">Power Shake<br><span>PS78</span></h2>
-          <p class="section-sub" style="font-size:13px;margin-top:8px;">Bebidas, snacks y suplementos las 24 horas. La PS78 tiene mayor capacidad y refrigeración integrada, pensada para gimnasios de alto tráfico.</p>
-          <div class="machine__specs" style="margin-top:14px;gap:8px;">
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pantalla</div><div class="spec-item__val" style="font-size:13px;">21.5" táctil</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Refrigeración</div><div class="spec-item__val" style="font-size:13px;">4°C – 25°C</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Conectividad</div><div class="spec-item__val" style="font-size:13px;">Wi-Fi + 4G</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Pago</div><div class="spec-item__val" style="font-size:13px;">Mercado Pago / QR</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Gestión</div><div class="spec-item__val" style="font-size:13px;">Remota en tiempo real</div></div>
-            <div class="spec-item" style="padding:10px 12px;"><div class="spec-item__label">Operación</div><div class="spec-item__val" style="font-size:13px;">24/7</div></div>
-          </div>
-          <ul class="machine__feature-list" style="margin-top:12px;gap:8px;">
-            <li style="font-size:13px;">Mayor capacidad de stock en múltiples filas</li>
-            <li style="font-size:13px;">Pantalla de 21.5" de alto impacto visual</li>
-            <li style="font-size:13px;">Refrigeración integrada para bebidas frías</li>
-            <li style="font-size:13px;">Control remoto de stock vía Wi-Fi + 4G</li>
-            <li style="font-size:13px;">Pago con Mercado Pago QR</li>
-            <li style="font-size:13px;">Instalación y setup incluido</li>
-          </ul>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <img src="images/ps78-machine.png" alt="Power Shake PS78 – Modelo grande" style="width:100%;display:block;object-fit:contain;max-height:620px;" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- PRODUCTS -->
-  <section class="section section--sm" id="productos">
+  <!-- COMPRA O ALQUILER -->
+  <section class="section" id="como-acceder" style="background:var(--black-card);">
     <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <span class="tag">Productos</span>
-        <h2 class="section-title" style="text-align:center;">Vos elegís<br><span>qué ofrecer.</span></h2>
-        <p class="section-sub" style="margin:14px auto 0;text-align:center;">La máquina se adapta al catálogo que mejor funcione para tu gimnasio. No hay una sola marca ni un menú fijo — elegís los productos, el mix y la estrategia de precios.</p>
+      <div class="reveal" style="text-align:center;margin-bottom:32px;">
+        <span class="tag">Dos formas de acceder</span>
+        <h2 class="section-title" style="text-align:center;">Dos formas de empezar.<br><span>Vos elegís.</span></h2>
+        <p class="section-sub" style="margin:10px auto 0;max-width:500px;">Ambas opciones te dan el control total de la operación y el 100% de las ventas.</p>
       </div>
 
-      <div class="reveal" style="margin-top:20px;margin-bottom:24px;text-align:center;">
-        <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(124,181,24,0.07);border:1px solid rgba(124,181,24,0.25);border-radius:10px;padding:14px 28px;max-width:620px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7cb518" stroke-width="1.8" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          <span style="font-size:14px;color:#1f2937;line-height:1.6;text-align:left;">Hoy ofrecemos un catálogo de suplementación de alta rotación como <strong style="color:#0d0f0d">punto de partida</strong>. El mix final se define con cada gimnasio según su perfil y sus socios.</span>
-        </div>
-      </div>
-
-      <div class="products__grid reveal">
-        <div class="product-card"><div class="product-card__img">🥛</div><div class="product-card__name">Protein Shake</div><div class="product-card__tag">Alta rotación</div></div>
-        <div class="product-card"><div class="product-card__img">💪</div><div class="product-card__name">Proteína + Colágeno</div><div class="product-card__tag">Recuperación</div></div>
-        <div class="product-card"><div class="product-card__img">⚡</div><div class="product-card__name">Electrolitos</div><div class="product-card__tag">Hidratación</div></div>
-        <div class="product-card"><div class="product-card__img">✨</div><div class="product-card__name">Colágeno</div><div class="product-card__tag">Bienestar</div></div>
-        <div class="product-card"><div class="product-card__img">🔥</div><div class="product-card__name">Creatina</div><div class="product-card__tag">Performance</div></div>
-        <div class="product-card" style="border-style:dashed;border-color:rgba(124,181,24,0.3);background:rgba(124,181,24,0.03);">
-          <div class="product-card__img" style="font-size:32px;border-color:rgba(124,181,24,0.15);color:var(--green);">+</div>
-          <div class="product-card__name" style="color:var(--gray);">Tu elección</div>
-          <div class="product-card__tag" style="color:rgba(124,181,24,0.7);">Personalizable</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS MODELS -->
-  <section class="section biz" id="modelos">
-    <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <span class="tag">Modelos de negocio</span>
-        <h2 class="section-title" style="text-align:center;">Una máquina.<br><span>Tres formas de trabajar</span><br>con Power Shake.</h2>
-        <p class="section-sub" style="margin:14px auto 0;text-align:center;">Elegís el modelo que mejor se adapte a tu gimnasio. Sin letra chica.</p>
-      </div>
-
-      <div class="biz__grid reveal">
-        <div class="biz-card">
-          <div class="biz-card__icon">
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="6" r="3"/><circle cx="15" cy="18" r="3"/><path d="M6 21L18 3"/></svg>
+      <div class="modes__grid reveal">
+        <div class="mode-card mode-card--featured">
+          <div class="mode-card__badge">Propietario desde el día 1</div>
+          <div class="mode-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
           </div>
-          <div class="biz-card__title">Revenue Share</div>
-          <div class="biz-card__sub">Ingresos sin inversión inicial</div>
-          <ul class="biz-card__list">
-            <li><span class="check">✓</span> Power Shake instala y opera la máquina</li>
-            <li><span class="check">✓</span> El gimnasio recibe un porcentaje de cada venta</li>
-            <li><span class="check">✓</span> Sin inversión inicial para el gimnasio</li>
-            <li><span class="check">✓</span> Sin operación ni carga de trabajo</li>
-            <li><span class="check">✓</span> Ideal para sumar ingresos pasivos sin riesgo</li>
+          <div class="mode-card__title">Comprá tu máquina</div>
+          <div class="mode-card__sub">La máquina es tuya desde el primer día. La instalamos y configuramos para que puedas empezar a operar.</div>
+          <ul class="mode-card__list">
+            <li><span class="check">✓</span> El 100% de las ventas es para vos</li>
+            <li><span class="check">✓</span> Control total de la operación</li>
+            <li><span class="check">✓</span> Gestión remota</li>
+            <li><span class="check">✓</span> Garantía de 6 meses</li>
+            <li><span class="check">✓</span> Soporte postventa</li>
           </ul>
-          <div class="biz-card__cta">
-            <a href="https://wa.me/5491151381311?text=Hola%2C%20me%20interesa%20el%20modelo%20Revenue%20Share%20de%20Power%20Shake" class="btn btn-outline" target="_blank" rel="noopener">Consultar modelo</a>
-          </div>
-        </div>
-
-        <div class="biz-card biz-card--featured">
-          <div class="biz-card__badge">Más popular</div>
-          <div class="biz-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-          </div>
-          <div class="biz-card__title">Alquiler de Máquina</div>
-          <div class="biz-card__sub">$299 USD/mes · 100% de las ventas para vos</div>
-          <ul class="biz-card__list">
-            <li><span class="check">✓</span> Fee mensual fijo: <strong style="color:#fff">$299 USD</strong></li>
-            <li><span class="check">✓</span> El gimnasio opera la máquina de forma independiente</li>
-            <li><span class="check">✓</span> El gimnasio se queda con el <strong style="color:var(--green)">100% de las ventas</strong></li>
-            <li><span class="check">✓</span> Permanencia mínima: 12 meses</li>
-            <li><span class="check">✓</span> Primeros 6 meses abonados por adelantado</li>
-            <li><span class="check">✓</span> Ideal para control total sin comprar la máquina</li>
-          </ul>
-          <div class="biz-card__cta">
-            <a href="https://wa.me/5491151381311?text=Hola%2C%20me%20interesa%20el%20modelo%20de%20Alquiler%20de%20m%C3%A1quina%20Power%20Shake%20PS86" class="btn btn-primary" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Hablar por WhatsApp
+          <div style="margin-top:auto;">
+            <a href="https://wa.me/5491151381311?text=Hola%2C%20quiero%20comprar%20una%20m%C3%A1quina%20Power%20Shake" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Quiero comprar una máquina
             </a>
           </div>
         </div>
 
-        <div class="biz-card">
-          <div class="biz-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        <div class="mode-card">
+          <div class="mode-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
           </div>
-          <div class="biz-card__title">Compra de Máquina</div>
-          <div class="biz-card__sub">Propietario del activo · 100% de las ventas</div>
-          <ul class="biz-card__list">
-            <li><span class="check">✓</span> El gimnasio compra la máquina PS86</li>
-            <li><span class="check">✓</span> El gimnasio se queda con el <strong style="color:var(--green)">100% de las ventas</strong></li>
-            <li><span class="check">✓</span> Power Shake brinda soporte, capacitación y setup</li>
-            <li><span class="check">✓</span> Escalá con más máquinas cuando quieras</li>
-            <li><span class="check">✓</span> Ideal para ser dueño del activo y operar tu propio vending</li>
+          <div class="mode-card__title">Alquilá tu máquina</div>
+          <div class="mode-card__sub">Empezá a operar con una inversión inicial menor, sin comprar la máquina.</div>
+          <ul class="mode-card__list">
+            <li><span class="check">✓</span> El 100% de las ventas es para vos</li>
+            <li><span class="check">✓</span> Operación independiente</li>
+            <li><span class="check">✓</span> Gestión remota</li>
+            <li><span class="check">✓</span> Garantía incluida</li>
+            <li><span class="check">✓</span> Opción de compra después de 12 meses</li>
           </ul>
-          <div class="biz-card__cta">
-            <a href="https://wa.me/5491151381311?text=Hola%2C%20me%20interesa%20comprar%20una%20m%C3%A1quina%20Power%20Shake%20PS86" class="btn btn-outline" target="_blank" rel="noopener">Consultar precio</a>
+          <div class="mode-card__highlight">
+            <strong>Opción de compra.</strong> Después de 12 meses, accedés a la opción de adquirir la máquina a un precio preferencial.
+          </div>
+          <div style="margin-top:auto;">
+            <a href="https://wa.me/5491151381311?text=Hola%2C%20quiero%20alquilar%20una%20m%C3%A1quina%20Power%20Shake" class="btn btn-outline" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Quiero alquilar una máquina</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- RENTABILIDAD -->
+  <section class="section section--light" id="rentabilidad">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:28px;">
+        <span class="tag">¿Cómo funciona?</span>
+        <h2 class="section-title" style="text-align:center;">De la elección<br><span>a tu primera venta.</span></h2>
+        <p class="section-sub" style="margin:10px auto 0;max-width:520px;">Nos ocupamos de dejar tu máquina preparada para que puedas empezar a operar.</p>
+      </div>
+
+      <div class="rent__grid reveal">
+        <div class="rent-card">
+          <div class="rent-card__steps">
+            <div class="rent-step">
+              <div class="rent-step__num">1</div>
+              <div class="rent-step__text"><strong>Elegís tu máquina.</strong> Te ayudamos a definir el modelo según tu ubicación, espacio y tipo de negocio.</div>
+            </div>
+            <div class="rent-step">
+              <div class="rent-step__num">2</div>
+              <div class="rent-step__text"><strong>La configuramos.</strong> Preparamos productos, precios, medios de pago y software.</div>
+            </div>
+            <div class="rent-step">
+              <div class="rent-step__num">3</div>
+              <div class="rent-step__text"><strong>La instalamos.</strong> Coordinamos la instalación y puesta en marcha en tu espacio.</div>
+            </div>
+            <div class="rent-step">
+              <div class="rent-step__num">4</div>
+              <div class="rent-step__text"><strong>Empezás a operar.</strong> Administrás ventas, stock y configuración desde tu panel.</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SIMULATOR -->
-  <section class="section" id="simulador" style="background:#2a2d2a;">
+  <div class="divider"></div>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="section section--light" id="que-incluye">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:28px;">
+        <span class="tag">Servicio completo</span>
+        <h2 class="section-title" style="text-align:center;">No te entregamos<br><span>solo una máquina.</span></h2>
+        <p class="section-sub" style="margin:10px auto 0;max-width:500px;">Te la entregamos configurada, instalada y lista para operar.</p>
+      </div>
+      <div class="includes__grid reveal">
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <div><div class="inc-item__title">Instalación</div><div class="inc-item__text">Nos encargamos de la instalación y puesta en marcha en tu espacio.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <div><div class="inc-item__title">Configuración</div><div class="inc-item__text">Configuramos software, productos, precios y parámetros iniciales.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="inc-item__title">Capacitación</div><div class="inc-item__text">Te mostramos cómo operar la máquina y utilizar el panel de gestión.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div><div class="inc-item__title">Personalización</div><div class="inc-item__text">Adaptamos la imagen exterior de la máquina a tu marca o negocio.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+          <div><div class="inc-item__title">Dashboard de ventas</div><div class="inc-item__text">Accedé a ventas, stock y reportes desde un único panel.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v3z"/></svg></div>
+          <div><div class="inc-item__title">Soporte técnico</div><div class="inc-item__text">Contás con asistencia postventa para resolver consultas e inconvenientes.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+          <div><div class="inc-item__title">Repuestos disponibles</div><div class="inc-item__text">Disponibilidad de repuestos para facilitar el mantenimiento de tu máquina.</div></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-item__icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div><div class="inc-item__title">Garantía 6 meses</div><div class="inc-item__text">Todos los modelos incluyen 6 meses de garantía desde la instalación.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CALCULADORA DE RENTABILIDAD -->
+  <section class="section" id="calculadora" style="background:var(--black);">
     <div class="container">
       <div class="reveal" style="display:flex;align-items:center;gap:32px;margin-bottom:20px;">
-        <img src="images/logo-ps.png" alt="Power Shake" style="height:130px;width:auto;display:block;flex-shrink:0;" />
         <div>
           <span class="tag">Calculadora de rentabilidad</span>
-          <h2 class="section-title" style="margin-top:8px;">Calculá cuánto puede<br><span>generar tu máquina.</span></h2>
-          <p class="section-sub" style="margin-top:8px;">Ajustá los valores y elegí tu modelo para ver tu retorno estimado mes a mes.</p>
+          <h2 class="section-title" style="margin-top:8px;">Estimá el resultado<br><span>de tu operación.</span></h2>
+          <p class="section-sub" style="margin-top:8px;">Ajustá los valores para ver una proyección orientativa de tu operación mensual.</p>
         </div>
       </div>
 
       <div class="reveal" style="margin-top:28px;background:var(--black);border:1px solid var(--black-border);border-radius:16px;overflow:hidden;">
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
           <button id="tab-alquiler" onclick="setModel('alquiler')"
             style="padding:10px 12px;background:rgba(124,181,24,0.1);border:none;border-bottom:2px solid var(--green);color:var(--green);font-family:'Open Sans',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px;">
             Alquiler
-          </button>
-          <button id="tab-revenue" onclick="setModel('revenue')"
-            style="padding:10px 12px;background:transparent;border:none;border-bottom:2px solid var(--black-border);color:var(--gray);font-family:'Open Sans',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px;">
-            Revenue Share
           </button>
           <button id="tab-compra" onclick="setModel('compra')"
             style="padding:10px 12px;background:transparent;border:none;border-bottom:2px solid var(--black-border);color:var(--gray);font-family:'Open Sans',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px;">
@@ -1186,30 +749,30 @@
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-          <div style="padding:24px;border-right:1px solid var(--black-border);background:#323632;border-radius:0 0 0 12px;">
+          <div style="padding:24px;border-right:1px solid var(--black-border);background:#1a1f1a;border-radius:0 0 0 12px;">
             <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:20px;">Configurá tu escenario</p>
 
             <div style="margin-bottom:16px;">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                <span style="font-size:14px;font-weight:600;color:var(--gray-light);">Precio promedio por vaso</span>
+                <span style="font-size:14px;font-weight:600;color:var(--gray-light);">Precio promedio por unidad</span>
                 <span id="val-precio" style="font-family:'Open Sans',sans-serif;font-size:17px;font-weight:800;color:var(--green);">$3.800</span>
               </div>
-              <input type="range" id="sl-precio" min="3000" max="8000" step="100" value="3800" oninput="updateSim()" style="width:100%;accent-color:#7cb518;cursor:pointer;height:4px;">
+              <input type="range" id="sl-precio" min="1000" max="10000" step="100" value="3800" oninput="updateSim()" style="width:100%;accent-color:#7cb518;cursor:pointer;height:4px;">
               <div style="display:flex;justify-content:space-between;margin-top:4px;">
-                <span style="font-size:11px;color:var(--gray);">$3.000</span>
-                <span style="font-size:11px;color:var(--gray);">$8.000</span>
+                <span style="font-size:11px;color:var(--gray);">$1.000</span>
+                <span style="font-size:11px;color:var(--gray);">$10.000</span>
               </div>
             </div>
 
             <div style="margin-bottom:16px;">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
                 <span style="font-size:13px;font-weight:600;color:var(--gray-light);">Ventas diarias estimadas</span>
-                <span id="val-ventas" style="font-family:'Open Sans',sans-serif;font-size:17px;font-weight:800;color:var(--green);">15 vasos</span>
+                <span id="val-ventas" style="font-family:'Open Sans',sans-serif;font-size:17px;font-weight:800;color:var(--green);">20 unidades</span>
               </div>
-              <input type="range" id="sl-ventas" min="5" max="50" step="1" value="15" oninput="updateSim()" style="width:100%;accent-color:#7cb518;cursor:pointer;height:4px;">
+              <input type="range" id="sl-ventas" min="5" max="80" step="1" value="20" oninput="updateSim()" style="width:100%;accent-color:#7cb518;cursor:pointer;height:4px;">
               <div style="display:flex;justify-content:space-between;margin-top:4px;">
-                <span style="font-size:11px;color:var(--gray);">5 vasos</span>
-                <span style="font-size:11px;color:var(--gray);">50 vasos</span>
+                <span style="font-size:11px;color:var(--gray);">5 u.</span>
+                <span style="font-size:11px;color:var(--gray);">80 u.</span>
               </div>
             </div>
 
@@ -1226,35 +789,35 @@
             </div>
 
             <div id="sim-model-note" style="background:rgba(124,181,24,0.06);border:1px solid rgba(124,181,24,0.2);border-radius:8px;padding:14px 16px;font-size:13px;color:var(--gray);line-height:1.6;">
-              <strong style="color:var(--green);">Modelo Alquiler:</strong> Fee fijo de $299 USD/mes. El gimnasio opera la máquina y se queda con el 100% de las ventas.
+              <strong style="color:var(--green);">Modelo Alquiler:</strong> Fee mensual fijo. Vos operás la máquina y te quedás con el 100% de las ventas.
             </div>
           </div>
 
-          <div style="padding:24px;display:flex;flex-direction:column;gap:10px;background:#323632;border-radius:0 0 12px 0;">
+          <div style="padding:24px;display:flex;flex-direction:column;gap:10px;background:#1a1f1a;border-radius:0 0 12px 0;">
             <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);">Tu retorno estimado</p>
 
             <div style="background:var(--black-card);border:1px solid var(--black-border);border-radius:10px;padding:12px 16px;">
-              <div style="font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Facturación bruta mensual</div>
-              <div id="res-bruta" style="font-family:'Open Sans',sans-serif;font-size:28px;font-weight:900;color:var(--white);line-height:1;">$975.000</div>
+              <div style="font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Facturación mensual estimada</div>
+              <div id="res-bruta" style="font-family:'Open Sans',sans-serif;font-size:28px;font-weight:900;color:var(--white);line-height:1;">$1.976.000</div>
+            </div>
+
+            <div style="background:var(--black-card);border:1px solid var(--black-border);border-radius:10px;padding:12px 16px;">
+              <div style="font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Costo estimado de mercadería (~50%)</div>
+              <div id="res-merch" style="font-family:'Open Sans',sans-serif;font-size:22px;font-weight:900;color:#ef4444;line-height:1;">-$988.000</div>
             </div>
 
             <div id="res-costo-box" style="background:var(--black-card);border:1px solid var(--black-border);border-radius:10px;padding:12px 16px;">
-              <div id="res-costo-label" style="font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Fee mensual</div>
-              <div id="res-costo" style="font-family:'Open Sans',sans-serif;font-size:28px;font-weight:900;color:#ef4444;line-height:1;">-$299 USD</div>
+              <div id="res-costo-label" style="font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Fee mensual de alquiler</div>
+              <div id="res-costo" style="font-family:'Open Sans',sans-serif;font-size:22px;font-weight:900;color:#ef4444;line-height:1;">-$299 USD</div>
             </div>
 
             <div style="background:rgba(124,181,24,0.08);border:2px solid var(--green);border-radius:10px;padding:14px 16px;">
-              <div id="res-neta-label" style="font-size:11px;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;font-weight:700;">Ganancia neta mensual</div>
-              <div id="res-neta" style="font-family:'Open Sans',sans-serif;font-size:34px;font-weight:900;color:var(--green);line-height:1;">$535.000</div>
-            </div>
-
-            <div id="res-extra-box" style="background:var(--black-card);border:1px solid var(--black-border);border-radius:10px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
-              <span id="res-extra-label" style="font-size:12px;color:var(--gray);">Punto de equilibrio diario</span>
-              <span id="res-extra" style="font-family:'Open Sans',sans-serif;font-size:17px;font-weight:800;color:var(--white);">18 vasos/día</span>
+              <div id="res-neta-label" style="font-size:11px;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;font-weight:700;">Resultado operativo estimado</div>
+              <div id="res-neta" style="font-family:'Open Sans',sans-serif;font-size:34px;font-weight:900;color:var(--green);line-height:1;">$988.000</div>
             </div>
 
             <p style="font-size:11px;color:rgba(156,163,175,0.5);line-height:1.5;margin-top:4px;">
-              * Proyección orientativa. Los resultados reales dependen del contexto de cada gimnasio.
+              Proyección orientativa. Los resultados reales dependen de la ubicación, el volumen de ventas, los productos, los costos y las condiciones de operación.
             </p>
           </div>
         </div>
@@ -1262,7 +825,7 @@
         <div style="padding:14px 24px;border-top:1px solid var(--black-border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
           <div>
             <p style="font-size:13px;font-weight:600;color:var(--white);">¿Te convencen los números?</p>
-            <p style="font-size:12px;color:var(--gray);">Hablemos y definimos el modelo ideal para tu gimnasio.</p>
+            <p style="font-size:12px;color:var(--gray);">Hablemos y encontramos el modelo ideal para tu negocio.</p>
           </div>
           <a href="https://wa.me/5491151381311?text=Hola%2C%20simulé%20mi%20retorno%20en%20la%20web%20y%20quiero%20saber%20más%20sobre%20Power%20Shake" class="btn btn-primary" target="_blank" rel="noopener" style="white-space:nowrap;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1275,9 +838,10 @@
 
   <script>
     var simModel = 'alquiler';
+    var feeAlquilerUSD = 299;
     function setModel(model) {
       simModel = model;
-      ['alquiler','revenue','compra'].forEach(function(m) {
+      ['alquiler','compra'].forEach(function(m) {
         var tab = document.getElementById('tab-' + m);
         if (m === model) {
           tab.style.background = 'rgba(124,181,24,0.1)';
@@ -1290,9 +854,8 @@
         }
       });
       var notes = {
-        alquiler: '<strong style="color:#7cb518;">Modelo Alquiler:</strong> Fee fijo de $299 USD/mes. El gimnasio opera la máquina y se queda con el 100% de las ventas.',
-        revenue:  '<strong style="color:#7cb518;">Modelo Revenue Share:</strong> Sin inversión. Power Shake opera la máquina y el gimnasio recibe el 10% de cada venta.',
-        compra:   '<strong style="color:#7cb518;">Modelo Compra:</strong> El gimnasio es dueño de la máquina PS86. Sin fee mensual. El costo de insumos es de $1.600 por vaso — el resto es ganancia tuya.'
+        alquiler: '<strong style="color:#7cb518;">Modelo Alquiler:</strong> Fee mensual fijo. Vos operás la máquina y te quedás con el 100% de las ventas.',
+        compra:   '<strong style="color:#7cb518;">Modelo Compra:</strong> Sos dueño de la máquina. Sin fee mensual. El costo de insumos varía según el producto que vendas.'
       };
       document.getElementById('sim-model-note').innerHTML = notes[model];
       updateSim();
@@ -1303,322 +866,222 @@
       var ventas = parseInt(document.getElementById('sl-ventas').value);
       var dias   = parseInt(document.getElementById('sl-dias').value);
       document.getElementById('val-precio').textContent = fmt(precio);
-      document.getElementById('val-ventas').textContent = ventas + ' vasos';
+      document.getElementById('val-ventas').textContent = ventas + ' unidades';
       document.getElementById('val-dias').textContent   = dias + ' días';
       var bruta = precio * ventas * dias;
+      var merch = bruta * 0.50;
       document.getElementById('res-bruta').textContent = fmt(bruta);
+      document.getElementById('res-merch').textContent = '-' + fmt(merch);
       if (simModel === 'alquiler') {
-        var fee  = 433550;
-        var neta = bruta - fee;
-        var equil = Math.ceil(fee / (precio * dias));
+        var dolarBN = 1250;
+        var fee  = feeAlquilerUSD * dolarBN;
+        var neta = bruta - merch - fee;
         document.getElementById('res-costo-box').style.display = 'block';
-        document.getElementById('res-costo-label').textContent = 'Fee mensual fijo';
-        document.getElementById('res-costo').textContent = '-$299 USD';
-        document.getElementById('res-neta-label').textContent = neta >= 0 ? 'Ganancia neta mensual' : 'Resultado mensual';
+        document.getElementById('res-costo-label').textContent = 'Fee mensual de alquiler (USD ' + feeAlquilerUSD + ')';
+        document.getElementById('res-costo').textContent = '-' + fmt(fee);
+        document.getElementById('res-neta-label').textContent = 'Resultado operativo estimado';
         document.getElementById('res-neta').textContent = fmt(neta);
         document.getElementById('res-neta').style.color = neta >= 0 ? '#7cb518' : '#ef4444';
-        document.getElementById('res-extra-label').textContent = 'Ventas/día para cubrir el fee';
-        document.getElementById('res-extra').textContent = equil + ' vasos/día';
-      } else if (simModel === 'revenue') {
-        var pct  = 0.10;
-        var neta = bruta * pct;
-        document.getElementById('res-costo-box').style.display = 'none';
-        document.getElementById('res-neta-label').textContent = 'Tu ganancia mensual estimada (10%)';
-        document.getElementById('res-neta').textContent = fmt(neta);
-        document.getElementById('res-neta').style.color = '#7cb518';
-        document.getElementById('res-extra-label').textContent = 'Sin inversión inicial';
-        document.getElementById('res-extra').textContent = '$0 de entrada';
       } else if (simModel === 'compra') {
-        var costoPorVaso = 1600;
-        var costos = costoPorVaso * ventas * dias;
-        var neta   = bruta - costos;
-        var margen = Math.round((neta / bruta) * 100);
-        document.getElementById('res-costo-box').style.display = 'block';
-        document.getElementById('res-costo-label').textContent = 'Costo de insumos ($1.600/vaso)';
-        document.getElementById('res-costo').textContent = '-' + fmt(costos);
-        document.getElementById('res-neta-label').textContent = 'Ganancia neta mensual (' + margen + '% margen)';
+        var neta = bruta - merch;
+        document.getElementById('res-costo-box').style.display = 'none';
+        document.getElementById('res-neta-label').textContent = 'Resultado operativo estimado';
         document.getElementById('res-neta').textContent = fmt(neta);
         document.getElementById('res-neta').style.color = '#7cb518';
-        document.getElementById('res-extra-label').textContent = 'Ganancia por vaso';
-        document.getElementById('res-extra').textContent = fmt(precio - costoPorVaso) + ' netos';
       }
     }
     updateSim();
   </script>
 
-  <!-- TECHNOLOGY -->
-  <section class="section" id="tecnologia">
-    <div class="container">
-      <div class="tech__inner">
-        <div class="reveal">
-          <div style="border-radius:14px;overflow:hidden;box-shadow:0 0 30px rgba(124,181,24,0.08);border:1px solid var(--black-border);">
-            <video id="vid-display" src="images/video-web.mov" autoplay muted loop playsinline style="width:100%;max-height:420px;display:block;object-fit:cover;"></video>
-<script>var v=document.getElementById('vid-display');v.addEventListener('loadedmetadata',function(){v.playbackRate=0.8;});</script>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--black-border);">
-              <div style="background:var(--black-card);padding:12px 8px;text-align:center;">
-                <div style="font-family:'Open Sans',sans-serif;font-size:20px;font-weight:900;color:var(--green);line-height:1;">24/7</div>
-                <div style="font-size:10px;color:var(--gray);margin-top:3px;line-height:1.3;">Siempre<br>activa</div>
-              </div>
-              <div style="background:var(--black-card);padding:12px 8px;text-align:center;">
-                <div style="font-family:'Open Sans',sans-serif;font-size:20px;font-weight:900;color:var(--green);line-height:1;">7</div>
-                <div style="font-size:10px;color:var(--gray);margin-top:3px;line-height:1.3;">Productos<br>por máquina</div>
-              </div>
-              <div style="background:var(--black-card);padding:12px 8px;text-align:center;">
-                <div style="font-family:'Open Sans',sans-serif;font-size:20px;font-weight:900;color:var(--white);line-height:1;">QR</div>
-                <div style="font-size:10px;color:var(--gray);margin-top:3px;line-height:1.3;">Pago<br>digital</div>
-              </div>
-              <div style="background:var(--black-card);padding:12px 8px;text-align:center;">
-                <div style="font-family:'Open Sans',sans-serif;font-size:20px;font-weight:900;color:var(--white);line-height:1;">PS86</div>
-                <div style="font-size:10px;color:var(--gray);margin-top:3px;line-height:1.3;">Modelo<br>único</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal reveal-delay-2">
-          <span class="tag">Tecnología</span>
-          <h2 class="section-title">Tech que<br><span>trabaja por vos.</span></h2>
-          <p class="section-sub">La PS86 no es solo una máquina. Es infraestructura tech para tu gimnasio.</p>
-
-          <div class="tech__features">
-            <div class="tech__feature">
-              <div class="tech__feature-icon">
-                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              </div>
-              <div>
-                <div class="tech__feature-name">Pantalla Touch HD</div>
-                <div class="tech__feature-desc">Interfaz intuitiva y premium. Experiencia de marca en cada interacción del usuario.</div>
-              </div>
-            </div>
-            <div class="tech__feature">
-              <div class="tech__feature-icon">
-                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg>
-              </div>
-              <div>
-                <div class="tech__feature-name">Pago QR integrado</div>
-                <div class="tech__feature-desc">Compatible con Mercado Pago, tarjetas y billeteras digitales. Sin efectivo ni complicaciones.</div>
-              </div>
-            </div>
-            <div class="tech__feature">
-              <div class="tech__feature-icon">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-              </div>
-              <div>
-                <div class="tech__feature-name">Control remoto</div>
-                <div class="tech__feature-desc">Gestioná stock, precios y configuración desde cualquier dispositivo, en cualquier momento.</div>
-              </div>
-            </div>
-            <div class="tech__feature">
-              <div class="tech__feature-icon">
-                <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-              </div>
-              <div>
-                <div class="tech__feature-name">Dashboard de ventas</div>
-                <div class="tech__feature-desc">Reportes en tiempo real: ventas, productos más elegidos, horarios pico y rendimiento.</div>
-              </div>
-            </div>
-            <div class="tech__feature">
-              <div class="tech__feature-icon">
-                <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg>
-              </div>
-              <div>
-                <div class="tech__feature-name">Pantalla publicitaria</div>
-                <div class="tech__feature-desc">Mostrá tu marca, promociones o publicidad de terceros. Canal extra de visibilidad.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY POWER SHAKE -->
-  <section class="section why" id="por-que">
-    <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <span class="tag">Por qué elegirnos</span>
-        <h2 class="section-title" style="text-align:center;">Por qué<br><span>Power Shake</span></h2>
-        <p class="section-sub" style="margin:14px auto 0;text-align:center;">No instalamos una máquina más. Instalamos una nueva categoría en tu gimnasio.</p>
-      </div>
-
-      <div class="why__grid reveal">
-        <div class="why-card">
-          <div class="why-card__icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-          </div>
-          <div>
-            <div class="why-card__title">Productos Star Nutrition</div>
-            <div class="why-card__text">Suplementación de marca reconocida y calidad comprobada. Tus socios confían en lo que toman. Vos confiás en lo que ofrecés.</div>
-          </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <div>
-            <div class="why-card__title">Fitness-Tech Innovation</div>
-            <div class="why-card__text">Power Shake es pionero en vending de suplementación inteligente para gimnasios premium. Llegaste primero, tu gym también puede hacerlo.</div>
-          </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <div>
-            <div class="why-card__title">Branding premium</div>
-            <div class="why-card__text">La máquina refuerza la imagen de tu gym. Tecnología visible, diseño que impacta, presencia que diferencia.</div>
-          </div>
-        </div>
-        <div class="why-card">
-          <div class="why-card__icon">
-            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div>
-            <div class="why-card__title">Soporte y capacitación</div>
-            <div class="why-card__text">Te acompañamos desde la instalación, la configuración y la operación. No estás solo. Estamos para crecer juntos.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <div class="divider"></div>
 
   <!-- FAQ -->
-  <section class="section" id="faq" style="background:var(--black-card);border-top:1px solid var(--black-border);">
-    <div class="container" style="max-width:760px;">
-      <div class="reveal" style="text-align:center;margin-bottom:36px;">
-        <span class="tag">FAQ</span>
-        <h2 class="section-title" style="text-align:center;">Lo que nos preguntan<br><span>siempre.</span></h2>
+  <section class="section section--light" id="faq">
+    <div class="container" style="max-width:720px;">
+      <div class="reveal" style="text-align:center;margin-bottom:32px;">
+        <span class="tag">Preguntas frecuentes</span>
+        <h2 class="section-title" style="text-align:center;">Lo que nos<br><span>preguntan siempre.</span></h2>
       </div>
-
       <div class="reveal" id="faq-list">
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Qué incluye la instalación?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            La máquina configurada para tu gimnasio, el setup completo, capacitación para operar, acceso al dashboard de ventas y soporte continuo. Las condiciones comerciales se arman según el modelo que elijas.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Qué diferencia hay entre comprar y alquilar?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Si comprás, la máquina pasa a ser tuya desde el primer día y te quedás con el 100% de las ventas. Si alquilás, la inversión inicial es menor y también te quedás con el 100% de los ingresos. Después de 12 meses de alquiler, tenés la posibilidad de comprar la máquina a un precio preferencial.</div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Necesito experiencia previa?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            No. Te acompañamos desde el primer día: te ayudamos a elegir la ubicación ideal dentro del gym, la instalamos y te mostramos cómo gestionar todo desde el panel.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Qué necesito tener en el espacio para instalar una máquina?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Un enchufe de 220V, conexión a internet por Wi-Fi del lugar y un espacio firme donde apoyarla. Las dimensiones exactas están en la ficha de cada modelo — consultanos y te indicamos cuál se adapta mejor.</div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Qué necesito tener en el gimnasio?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Un enchufe de 220V, conexión a internet por wifi y un espacio firme donde apoyarla. Nada más. Las medidas exactas están en la ficha de cada modelo.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cómo cobran los clientes y cuándo se acredita el dinero?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Los clientes pagan escaneando el QR con Mercado Pago o billetera digital. El dinero se acredita automáticamente. Sin efectivo, sin cierres de caja, sin nadie que tenga que ir a retirar nada.</div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Cómo cobran mis socios y cuándo se acredita la plata?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Tus socios pagan escaneando el QR con Mercado Pago o billetera digital. La plata se acredita automáticamente. Sin efectivo, sin cierres de caja, sin nadie que tenga que ir a retirar nada.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Puedo cambiar precios y productos sin ir hasta la máquina?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Sí. Desde el dashboard modificás precios, habilitás o deshabilitás productos y ajustás la configuración. El cambio se aplica al instante desde cualquier dispositivo.</div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Puedo cambiar precios y productos sin ir hasta la máquina?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Sí. Desde el dashboard cambiás precios, habilitás o deshabilitás productos y configurás lo que quieras. El cambio impacta en la máquina al instante, desde cualquier dispositivo.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si la máquina necesita mantenimiento?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Tenemos soporte remoto para resolver la mayoría de los casos sin visita técnica. Además contamos con stock de repuestos disponible para una respuesta rápida ante cualquier falla.</div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Qué pasa si necesita un repuesto o mantenimiento?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Tenemos stock de repuestos disponible: espirales, motores y todo lo necesario. Ante cualquier falla, el soporte remoto resuelve la mayoría de los casos sin necesidad de visita técnica.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Qué productos puede vender la máquina?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Los modelos PS86 y PS22 están diseñados para suplementos deportivos (proteínas, colágeno, electrolitos). La compatibilidad de los productos depende de las dimensiones y configuración de la máquina — lo definimos juntos.</div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Puedo elegir qué suplementos ofrece la máquina?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Sí. El mix de productos se define con vos según el perfil de tus socios. Arrancamos con un catálogo de alta rotación como base y lo ajustamos a lo que mejor funcione para tu gimnasio.
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cuál es el modelo que más me conviene?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Depende del tipo de espacio, el tráfico estimado y el volumen de ventas que esperás. El PS86 es ideal para espacios de mayor tráfico, mientras que el PS22 es perfecto para espacios más compactos. Hablemos y te ayudamos a elegir el modelo ideal para tu situación.</div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Cuál es el modelo de negocio que más conviene?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Depende de tu situación. Revenue Share es ideal si querés cero riesgo y cero inversión. Alquiler conviene si querés quedarte con el 100% de las ventas pagando una cuota fija. Compra es la mejor opción si querés ser dueño del activo a largo plazo. Hablemos y te ayudamos a elegir.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Qué productos son compatibles con el modelo PS78?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            El mix de productos lo definimos juntos luego de abonar la seña. A partir de ahí configuramos la máquina a medida según tu negocio: tipo de producto, formato, precio y presentación. No hay un catálogo cerrado — lo armamos para vos.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            ¿Puedo cambiar o rotar los productos que vendo en la PS78?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            Sí. Nosotros cambiamos los espirales de la máquina y los modificamos para que sean compatibles con los nuevos productos. Si querés rotar el catálogo, nos avisás y coordinamos el cambio sin interrumpir la operación.
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <style>
-    .faq-item { border-bottom: 1px solid var(--black-border); }
-    .faq-q {
-      width: 100%; background: none; border: none; color: var(--white);
-      font-family: var(--font-body); font-size: 15px; font-weight: 600;
-      text-align: left; padding: 18px 0; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 16px; transition: color 0.2s ease;
-    }
-    .faq-q:hover { color: var(--green); }
-    .faq-icon { font-size: 20px; color: var(--green); flex-shrink: 0; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); line-height: 1; }
-    .faq-q.open .faq-icon { transform: rotate(45deg); }
-    .faq-a {
-      font-size: 14px; color: var(--gray); line-height: 1.7;
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s ease;
-      padding: 0;
-    }
-    .faq-a.open { max-height: 300px; padding-bottom: 18px; }
-  </style>
+  <!-- CTA FINAL -->
+  <section class="section cta-section" id="contacto">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Empezá hoy</span>
+        <h2 class="cta-section__title">¿LISTO PARA PONER EN MARCHA<br><span style="color:var(--green);">TU MÁQUINA?</span></h2>
+        <p class="cta-section__sub">Contanos dónde querés instalarla y te armamos una propuesta a medida.</p>
+        <div class="cta-section__buttons">
+          <a href="https://wa.me/5491151381311?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20Power%20Shake" class="btn btn-wa" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            HABLAR POR WHATSAPP
+          </a>
+          <a href="mailto:jeronimo.gagliardi@powershake.com" class="btn btn-outline">SOLICITAR INFORMACIÓN</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRONE VIDEO -->
+  <section style="position:relative;width:100%;background:#000;display:flex;align-items:center;justify-content:center;padding:0;">
+    <video autoplay muted loop playsinline style="width:100%;max-height:60vh;display:block;object-fit:contain;">
+      <source src="images/drone-final.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0a0c0a;border-top:1px solid #1e241e;padding:48px 0 24px;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1.4fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid #1e241e;">
+
+        <!-- Columna 1: Marca -->
+        <div>
+          <a href="#inicio" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:14px;">
+            <span style="font-family:'Barlow Condensed','Open Sans',sans-serif;font-size:22px;font-weight:800;font-style:italic;letter-spacing:2px;text-transform:uppercase;color:#fff;">POWER<span style="color:#7cb518;">SHAKE</span></span>
+          </a>
+          <p style="font-size:13px;color:#6a7a62;line-height:1.7;margin-bottom:6px;">Automatizá ventas. Generá ingresos 24/7.</p>
+          <p style="font-size:12px;color:#4a5a42;margin-bottom:20px;">Buenos Aires, Argentina</p>
+          <a href="https://wa.me/5491151381311?text=Hola%2C%20quiero%20consultar%20sobre%20Power%20Shake" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:8px;background:#7cb518;color:#0a0c0a;font-size:12px;font-weight:800;padding:9px 18px;border-radius:6px;text-decoration:none;letter-spacing:.5px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consultar ahora
+          </a>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <div>
+          <p style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Navegación</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="#por-que"      style="font-size:13px;color:#6a7a62;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#7cb518'" onmouseout="this.style.color='#6a7a62'">Beneficios</a>
+            <a href="#maquinas"     style="font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#7cb518'" onmouseout="this.style.color='#6a7a62'">Máquinas</a>
+            <a href="#como-acceder" style="font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#7cb518'" onmouseout="this.style.color='#6a7a62'">Compra / Alquiler</a>
+            <a href="#rentabilidad" style="font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#7cb518'" onmouseout="this.style.color='#6a7a62'">Rentabilidad</a>
+            <a href="#que-incluye"  style="font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#7cb518'" onmouseout="this.style.color='#6a7a62'">Qué incluye</a>
+            <a href="#faq"          style="font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#7cb518'" onmouseout="this.style.color='#6a7a62'">FAQ</a>
+          </div>
+        </div>
+
+        <!-- Columna 3: Contacto -->
+        <div>
+          <p style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Contacto</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7cb518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span style="font-size:13px;color:#6a7a62;line-height:1.5;">Buenos Aires, Argentina</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <a href="https://wa.me/5491151381311" target="_blank" rel="noopener" style="font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#6a7a62'">WhatsApp</a>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7cb518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span style="font-size:13px;color:#6a7a62;">jeronimo.gagliardi@powershake.com</span>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7cb518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <span style="font-size:13px;color:#6a7a62;">Lunes a Sábados · 09:00 a 20:00 hs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna 4: Redes -->
+        <div>
+          <p style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Seguinos</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="https://instagram.com/powershake.ar" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-size:13px;color:#6a7a62;text-decoration:none;" onmouseover="this.style.color='#e1306c'" onmouseout="this.style.color='#6a7a62'">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+              @powershake.ar
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div style="padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <p style="font-size:11px;color:#3a4a32;">© 2026 Power Shake. Todos los derechos reservados.</p>
+        <p style="font-size:11px;color:#3a4a32;">Modelos: PS86 · PS22</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5491151381311" class="wa-float" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <script>
+    /* NAV */
+    const navbar = document.getElementById('navbar');
+    const scrollBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('nav--scrolled', window.scrollY > 40);
+      var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      scrollBar.style.transform = 'scaleX(' + Math.min(pct, 1) + ')';
+    });
+
+    /* HAMBURGER */
+    var menuOpen = false;
+    document.getElementById('hamburger').addEventListener('click', function() {
+      menuOpen = !menuOpen;
+      document.getElementById('mobileMenu').classList.toggle('open', menuOpen);
+    });
+    function closeMobile() {
+      menuOpen = false;
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    /* REVEAL ON SCROLL */
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+    /* ACTIVE NAV */
+    var sections = document.querySelectorAll('section[id], div[id]');
+    var navLinks = document.querySelectorAll('.nav__links a');
+    window.addEventListener('scroll', function() {
+      var pos = window.scrollY + 80;
+      sections.forEach(function(s) {
+        if (s.offsetTop <= pos && s.offsetTop + s.offsetHeight > pos) {
+          navLinks.forEach(function(a) {
+            a.classList.toggle('nav-active', a.getAttribute('href') === '#' + s.id);
+          });
+        }
+      });
+    });
+
+    /* FAQ */
     function toggleFaq(btn) {
       var isOpen = btn.classList.contains('open');
       document.querySelectorAll('.faq-q').forEach(function(b) {
@@ -1631,232 +1094,5 @@
       }
     }
   </script>
-
-  <!-- CTA FINAL -->
-  <section class="section cta-section" id="contacto">
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="reveal">
-        <span class="tag">Sumate ahora</span>
-        <h2 class="cta-section__title">Instalá Power Shake<br><span style="color:var(--green)">en tu gimnasio.</span></h2>
-        <p class="cta-section__sub">Elegís el modelo que mejor se adapte a vos. Nosotros nos encargamos del resto.</p>
-        <div class="cta-section__buttons">
-          <a href="https://wa.me/5491151381311?text=Hola%2C%20quiero%20instalar%20Power%20Shake%20en%20mi%20gimnasio" class="btn btn-wa" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Hablar por WhatsApp
-          </a>
-          <a href="#modelos" class="btn btn-outline">Conocé los modelos de negocio</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DRONE VIDEO -->
-  <section style="position:relative;width:100%;background:#000;display:flex;align-items:center;justify-content:center;padding:0;">
-    <video autoplay muted loop playsinline
-      style="width:100%;max-height:65vh;display:block;object-fit:contain;">
-      <source src="images/drone-final.mp4" type="video/mp4">
-    </video>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer__inner">
-        <div>
-          <a href="#" class="nav__logo" style="display:inline-flex;">
-            <div class="nav__logo-mark">
-              <img src="images/logo-ps.png" alt="Power Shake" />
-            </div>
-            <span class="nav__logo-text">POWER<span>SHAKE</span></span>
-          </a>
-          <p class="footer__copy">Suplementación automática para gimnasios premium.</p>
-          <p class="footer__copy">© 2026 Power Shake. Todos los derechos reservados.</p>
-          <p style="font-size:11px;color:rgba(156,163,175,0.5);margin-top:8px;">* Aplica en modelos de Alquiler y Compra de máquina.</p>
-        </div>
-        <div class="footer__links">
-          <a href="#beneficios">Beneficios</a>
-          <a href="#maquina">PS86</a>
-          <a href="#modelos">Modelos</a>
-          <a href="#tecnologia">Tecnología</a>
-          <a href="#disenos">Diseños</a>
-          <a href="#contacto">Contacto</a>
-          <a href="https://wa.me/5491151381311" target="_blank" rel="noopener" style="color:#25D366;">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <a href="https://wa.me/5491151381311" class="wa-float" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
-
-  <script>
-    const navbar    = document.getElementById('navbar');
-    const scrollBar = document.getElementById('scrollProgress');
-    const hero      = document.querySelector('.hero');
-
-    // ── Scroll: nav + progress + parallax ──────────────────────
-    window.addEventListener('scroll', () => {
-      const sy = window.scrollY;
-      navbar.classList.toggle('scrolled', sy > 40);
-      const pct = sy / Math.max(document.body.scrollHeight - window.innerHeight, 1);
-      scrollBar.style.transform = 'scaleX(' + Math.min(pct, 1).toFixed(4) + ')';
-      if (hero && sy < window.innerHeight)
-        hero.style.backgroundPositionY = 'calc(center + ' + (sy * 0.28).toFixed(1) + 'px)';
-    }, { passive: true });
-
-    // ── Mobile menu ─────────────────────────────────────────────
-    const hamburger  = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
-    function closeMobile() { mobileMenu.classList.remove('open'); }
-    document.addEventListener('click', e => {
-      if (!navbar.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
-    });
-
-    // ── Pre-hide grid children for stagger ──────────────────────
-    const staggerSel = '.biz__grid, .products__grid, .why__grid, .hiw__steps';
-    document.querySelectorAll(staggerSel).forEach(grid => {
-      Array.from(grid.children).forEach(child => {
-        child.style.opacity = '0';
-        child.style.transform = 'translateY(20px)';
-      });
-    });
-
-    // ── Reveal observer: fade-up + grid stagger + HIW line ──────
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        el.classList.add('visible');
-        if (el.matches(staggerSel)) {
-          Array.from(el.children).forEach((child, i) => {
-            setTimeout(() => {
-              child.style.transition = 'opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1)';
-              child.style.opacity    = '1';
-              child.style.transform  = 'translateY(0)';
-            }, i * 100);
-          });
-          if (el.matches('.hiw__steps'))
-            setTimeout(() => el.classList.add('hiw__steps--drawn'), 500);
-        }
-        revealObserver.unobserve(el);
-      });
-    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // ── Active nav section tracking ──────────────────────────────
-    const navLinks = document.querySelectorAll('.nav__links a');
-    const sectionObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          navLinks.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === '#' + id));
-        }
-      });
-    }, { threshold: 0.35, rootMargin: '-10% 0px -55% 0px' });
-    document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
-
-    // ── Counter with spring overshoot ───────────────────────────
-    function animateCountSpring(el, target, suffix, duration) {
-      const overshoot = target * 1.07;
-      const t1 = duration * 0.72;
-      const t2 = duration - t1;
-      const t0 = performance.now();
-      (function tick(now) {
-        const elapsed = now - t0;
-        let val;
-        if (elapsed < t1) {
-          const p = elapsed / t1;
-          val = overshoot * (1 - Math.pow(1 - p, 4));
-        } else {
-          const p = Math.min((elapsed - t1) / t2, 1);
-          val = overshoot + (target - overshoot) * (1 - Math.pow(1 - p, 3));
-        }
-        el.textContent = Math.round(val) + suffix;
-        if (elapsed < duration) requestAnimationFrame(tick);
-        else {
-          el.textContent = target + suffix;
-          el.classList.add('popped');
-          setTimeout(() => el.classList.remove('popped'), 500);
-        }
-      })(t0);
-    }
-    setTimeout(() => {
-      const cObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const el  = entry.target;
-          const txt = el.textContent.trim();
-          if (txt === '3')          animateCountSpring(el, 3,   '',  900);
-          if (txt.includes('100')) animateCountSpring(el, 100, '%', 1500);
-          cObs.unobserve(el);
-        });
-      }, { threshold: 0.6 });
-      document.querySelectorAll('.hero__stat-num').forEach(el => cObs.observe(el));
-    }, 900);
-
-    // ── Desktop-only interactions ────────────────────────────────
-    if (!window.matchMedia('(hover: none)').matches) {
-
-      // 3D tilt
-      function addTilt(sel, intensity) {
-        document.querySelectorAll(sel).forEach(card => {
-          card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width  - 0.5;
-            const y = (e.clientY - r.top)  / r.height - 0.5;
-            card.style.transform  = 'perspective(900px) rotateX(' + (-y*intensity).toFixed(2) + 'deg) rotateY(' + (x*intensity).toFixed(2) + 'deg) translateY(-4px)';
-            card.style.transition = 'box-shadow 0.08s, border-color 0.08s';
-          });
-          card.addEventListener('mouseleave', () => {
-            card.style.transform  = '';
-            card.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, box-shadow 0.3s ease';
-          });
-        });
-      }
-      addTilt('.biz-card', 5);
-      addTilt('.why-card', 4);
-
-      // Spotlight glow following cursor on cards
-      const cardBgs = { 'biz-card': 'var(--black)', 'why-card': 'var(--black)' };
-      Object.entries(cardBgs).forEach(([cls, base]) => {
-        document.querySelectorAll('.' + cls).forEach(card => {
-          card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = e.clientX - r.left, y = e.clientY - r.top;
-            card.style.background = 'radial-gradient(circle 180px at ' + x + 'px ' + y + 'px, rgba(124,181,24,0.09) 0%, ' + base + ' 70%)';
-          });
-          card.addEventListener('mouseleave', () => { card.style.background = ''; });
-        });
-      });
-
-      // Magnetic effect on primary CTAs
-      document.querySelectorAll('.btn-primary, .btn-wa').forEach(btn => {
-        btn.addEventListener('mousemove', e => {
-          const r = btn.getBoundingClientRect();
-          const x = ((e.clientX - r.left) / r.width  - 0.5) * 10;
-          const y = ((e.clientY - r.top)  / r.height - 0.5) * 6;
-          btn.style.transform  = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translateY(-2px)';
-          btn.style.transition = 'transform 0.12s ease';
-        });
-        btn.addEventListener('mouseleave', () => {
-          btn.style.transform  = '';
-          btn.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1), background 0.3s ease, box-shadow 0.3s ease';
-        });
-      });
-    }
-
-    // ── Tech feature arrows ──────────────────────────────────────
-    document.querySelectorAll('.tech__feature').forEach(f => {
-      const a = document.createElement('span');
-      a.className = 'tech__arrow';
-      a.textContent = '→';
-      f.appendChild(a);
-    });
-  </script>
-
 </body>
 </html>
